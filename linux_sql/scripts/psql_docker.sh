@@ -30,6 +30,18 @@ function check_container_status() {
   return $?
 }
 
+function print_result() {
+  local result=$1
+  success_message=$2
+  failure_message=$3
+  if [ $result -eq 0 ]; then
+    echo -e "Container ${container_name} has been ${success_message} successfully"
+  else
+    echo -e "Container ${container_name} failed to ${failure_message}"
+  fi
+  return $result
+}
+
 function create_container() {
   check_container_status $container_name
   local container_status=$?
@@ -62,16 +74,12 @@ function create_container() {
   # Create container
   docker run --name $container_name -e POSTGRES_USER=$db_username -e POSTGRES_PASSWORD=$db_password -d -v $volume_name:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine > /dev/null
   result=$?
-
-  if [ $result -eq 0 ]; then
-    echo -e "Container ${container_name} has been created successfully"
-  else
-    echo -e "Container ${container_name} failed to create"
-  fi
+  print_result $result "created" "create"
+  
   return $result
 }
 
-function start_container() {
+function run_container() {
   check_container_status $container_name
   local container_status=$?
 
@@ -85,34 +93,18 @@ function start_container() {
 
   docker container $cmd $container_name > /dev/null
   result=$?
-  if [ $result -eq 0 ]; then
-    echo -e "Container ${container_name} has started successfully"
-  else
-    echo -e "Container ${container_name} failed to start"
-  fi
+  case $cmd in
+    start)
+      print_result $result "started" "start"
+    ;;
+    stop)
+      print_result $result "stopped" "stop"
+    ;;
+    *)
+      echo "Command was not performed on container ${container_name}"
+      return 1
+  esac
   return $result
-}
-
-function stop_container() {
-  check_container_status $container_name
-  local container_status=$?
-
-  # Check if the container does not exists
-  if [ $container_status -eq 1 ]; then
-    echo 'Container does not exists'
-    return 1
-  fi
-
-  verify_arguments 1
-
-  docker container $cmd $container_name > /dev/null
-  result=$?
-  if [ $result -eq 0 ]; then
-    echo -e "Container ${container_name} has stopped successfully"
-  else
-    echo -e "Container ${container_name} failed to stop"
-  fi
-  return result
 }
 
 case $cmd in
@@ -120,12 +112,8 @@ case $cmd in
     create_container
     exit $?
   ;;
-  start)
-    start_container
-    exit $?
-  ;;
-  stop)
-    stop_container
+  start|stop)
+    run_container
     exit $?
   ;;
   *)
