@@ -7,12 +7,14 @@ db_password=$3
 
 # Track number of CLI arguments
 total_args="$#"
+container_name='jrvs-psql'
+volume_name='pgdata'
 
 # Make sure that user input the valid number of arguments
 function verify_arguments() {
   local arg_num=$1
   if [ $total_args -ne $arg_num ]; then
-    echo "Illegal number of parameters"
+    echo 'Illegal number of parameters'
     exit 1
   fi
 }
@@ -29,18 +31,48 @@ function check_container_status() {
 }
 
 function create_container() {
-  echo "Create"
-  return 0
+  check_container_status $container_name
+  local container_status=$?
+
+  # Check if the container is already created
+  if [ $container_status -eq 0 ]; then
+    echo 'Container already exists'
+    return 1
+  fi
+  
+  # Check number of CLI arguments
+  verify_arguments 3
+
+  # Check if database username exists
+  if [ -z $db_username ]; then 
+    echo 'Database Username not provided'
+    echo 'Command: psql_docker.sh create <db_username> <db_password>'
+    return 1
+  fi
+
+  # Check if database password exists
+  if [ -z $db_password ]; then 
+    echo 'Database Password not provided'
+    echo 'Command: psql_docker.sh create <db_username> <db_password>'
+    return 1
+  fi
+  
+  # Create volume (NOTE: Ensure volume has not existed before)
+  docker volume create $volume_name
+  # Create container
+  docker run --name $container_name -e POSTGRES_USER=$db_username -e POSTGRES_PASSWORD=$db_password -d -v $volume_name:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
+
+  return $?
 }
 
 function start_container() {
   echo "Start"
-  return 0
+  return $?
 }
 
 function stop_container() {
   echo "Stop"
-  return 0
+  return $?
 }
 
 case $cmd in
