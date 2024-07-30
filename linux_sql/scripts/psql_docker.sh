@@ -28,10 +28,39 @@ function check_container_status() {
   return $? 
 }
 
-function create_container() {}
+function create_container() {
+  echo "Create"
+  return 0
+}
 
-function start_container() {}
+function start_container() {
+  echo "Start"
+  return 0
+}
 
-function stop_container() {}
+function stop_container() {
+  echo "Stop"
+  return 0
+}
+
+case $cmd in
+  create)
+    create_container
+    exit $?
+  ;;
+  start)
+    start_container
+    exit $?
+  ;;
+  stop)
+    stop_container
+    exit $?
+  ;;
+  *)
+    echo "Illegal command"
+    echo "Commands: start | stop | create"
+    exit 1
+  ;;
+esac
 
 exit 0
