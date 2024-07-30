@@ -7,6 +7,8 @@ db_password=$3
 
 # Track number of CLI arguments
 total_args="$#"
+
+# Names of the docker container/volume instance
 container_name='jrvs-psql'
 volume_name='pgdata'
 
@@ -24,12 +26,14 @@ function run_docker() {
   sudo systemctl status docker || sudo systemctl start docker
 }
 
+# Check the status of the container
 function check_container_status() {
   local container_name=$1
   docker container inspect $container_name > /dev/null
   return $?
 }
 
+# Print sucess or failure message based on given result
 function print_result() {
   local result=$1
   success_message=$2
@@ -42,6 +46,7 @@ function print_result() {
   return $result
 }
 
+# Create non-existant container
 function create_container() {
   check_container_status $container_name
   local container_status=$?
@@ -71,7 +76,7 @@ function create_container() {
   
   # Create volume (NOTE: Ensure volume has not existed before)
   docker volume create $volume_name
-  # Create container
+  # Create container with user inputs
   docker run --name $container_name -e POSTGRES_USER=$db_username -e POSTGRES_PASSWORD=$db_password -d -v $volume_name:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine > /dev/null
   result=$?
   print_result $result "created" "create"
@@ -79,6 +84,7 @@ function create_container() {
   return $result
 }
 
+# Run a user-input docker command
 function run_container() {
   check_container_status $container_name
   local container_status=$?
@@ -89,10 +95,14 @@ function run_container() {
     return 1
   fi
 
+  # Check number of CLI arguments
   verify_arguments 1
 
+  # Execute docker command
   docker container $cmd $container_name > /dev/null
   result=$?
+  
+  # Print Command Result
   case $cmd in
     start)
       print_result $result "started" "start"
@@ -101,12 +111,14 @@ function run_container() {
       print_result $result "stopped" "stop"
     ;;
     *)
+      # Handle invalid command
       echo "Command was not performed on container ${container_name}"
       return 1
   esac
   return $result
 }
 
+# Main functionality of the linux SQL program
 case $cmd in
   create)
     create_container
@@ -117,6 +129,7 @@ case $cmd in
     exit $?
   ;;
   *)
+    # Handle invalid command
     echo "Illegal command"
     echo "Commands: start | stop | create"
     exit 1
