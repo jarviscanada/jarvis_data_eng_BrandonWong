@@ -16,7 +16,7 @@ total_args="$#"
 # Save all machine info, i.e., CPU, Virtual Machine statitics and Hostname
 vmstat=$(vmstat --unit M)
 hostname=$(hostname -f)
-meminfo=$(cat /proc/meminfo)
+meminfo=$(cat "/proc/meminfo")
 
 # Retrieve specific hardware information
 timestamp=$(vmstat -t | awk '{print $18, $19}' | tail -n1 | xargs)
@@ -29,13 +29,34 @@ disk_read=$(echo "$vmstat" | tail -1 | awk '{print $10}' | xargs)
 disk_io=$(expr ${disk_write} + ${disk_read})
 disk_available=$(df -BM / | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')
 
-TAB="$(printf '\t')"
-cat << EOF
-timestamp${TAB}${timestamp}
-memory_free${TAB}${memory_free}
-cpu_idle${TAB}${cpu_idle}
-cpu_kernel${TAB}${cpu_kernel}
-disk_io ${TAB}${disk_io}
-disk_available${TAB}${disk_available}
-EOF
+# SQL select subquery to fetch the hostname's ID
+select_stmt="(SELECT id FROM host_info WHERE hostname='$hostname')"
 
+# SQL insert query to insert the host usage info
+insert_stmt=$(cat << EOF
+INSERT INTO host_usage (
+  "timestamp",
+  host_id,
+  memory_free,
+  cpu_idle,
+  cpu_kernel,
+  disk_io,
+  disk_available
+) VALUES (
+  '$timestamp',
+  $select_stmt,
+  $memory_free,
+  $cpu_idle,
+  $cpu_kernel,
+  $disk_io,
+  $disk_available
+);
+EOF
+)
+
+export PGPASSWORD=$psql_password
+
+# Update the host_usage table with new host usage info
+psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
+
+exit $?
