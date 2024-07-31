@@ -29,20 +29,19 @@ l2_cache=$(echo "$lscpu" | egrep "^L2\scache:" | tr -s ' ' | cut -d ' ' -f 3 | x
 timestamp=$(vmstat -t | awk '{print $18, $19}' | tail -n1 | xargs)
 total_mem=$(echo "$meminfo" | egrep "^MemTotal:" | awk '{print $2}' | xargs)
 
+# SQL insert query to insert a new host info
 insert_stmt=$(cat << EOF
-INSERT INTO 
-  host_info (
-    id, 
-    hostname, 
-    cpu_number, 
-    cpu_architecture, 
-    cpu_model, 
-    cpu_mhz, 
-    l2_cache, 
-    "timestamp", 
-    total_mem
-  )
-VALUES (
+INSERT INTO host_info (
+  id, 
+  hostname, 
+  cpu_number, 
+  cpu_architecture, 
+  cpu_model, 
+  cpu_mhz, 
+  l2_cache, 
+  "timestamp", 
+  total_mem
+) VALUES (
   DEFAULT,
   '$hostname',
   $cpu_number,
@@ -57,7 +56,7 @@ EOF
 )
 
 export PGPASSWORD=$psql_password
-
+# Update the host_info table with a new host info
 psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
 
 exit $?
