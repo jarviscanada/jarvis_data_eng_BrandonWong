@@ -1,13 +1,12 @@
 # Linux Cluster Monitoring Agent
 ## Introduction
 This project is an automated system that keeps track of the resources utilized by a Linux Cluster. It tracks the cpu, memory and disk usage of the given machine and persists all this information within a dedicated database. It is written for system admins or developers who manage actual/virtual Linux machines.
-
 ### Technologies
-- Bash -- Write scripts to fetch information of the given machine
-- Docker -- Run a Postgres container and maintain its volume
-- Git -- Keep track of project changes
-- Postgres -- Persists the machine's information
-- Rocky 9 -- OS environment that was written it on
+- **Bash:** Write scripts to fetch information of the given machine
+- **Docker:** Run a Postgres container and maintain its volume
+- **Git:** Keep track of project changes
+- **Postgres:** Persists the machine's information
+- **Rocky 9:** OS environment that was written it on
 
 ## Quick Start
 To spin up this project on local/remote machine
@@ -35,12 +34,44 @@ crontab -e
 # Inside crontab in the machine's default editor
 * * * * * $HOME/linux_sql/scripts/host_usage.sh <psql_host> <psql_port> <db_name> <psql_user> <psql_password>
 ```
+
 ## Implementation
 ### Architecture
 ### Scripts
 ### Database Modeling
+The database has two tables where we keep track of each host machine and each new log is associated with such machine.
+### `host_info`
+- `id`: Unique ID of host machine
+### `host_usage`
+
 
 ## Test
+Manual testing was used to test the bash scripts DDL following Base, Alternative and Error cases. Here are the following cases for each script.
+### `psql_docker.sh`
+#### Base
+- Create a new Postgres container
+- Start an existing Postgres container
+- Stop an existing Postgres container
+#### Error
+- Create a new Postgres container while an existing one is running
+- Start a non-existing Postgres container
+- Stop a non-existing Postgres container
+- Create a Postgres container with missing arguments
+- Start a Postgres container with more arguments
+- Stop a Postgres container with more arguments
+- Use a command that does not exist
+### `host_info.sh`
+#### Base
+- Add host info to the Postgres container
+#### Error
+- Add host info that already exists
+- Provide invalid number of arguments
+### `host_usage.sh`
+#### Base
+- Add host usage from existing host to Postgres container
+#### Error
+- Add host usage from non-existing host to Postgres container
+- Provide invalid number of arguments
 
 ## Deployment
 The application is deployed using both **Docker** and `crontab`. Docker is used to run the **Postgres** in an isolated environment. `crontab` is used to run the `host_usage.sh` script **every minute** on host machine.
