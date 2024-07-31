@@ -38,3 +38,36 @@ l2_cache${TAB}${l2_cache}
 timestamp${TAB}${timestamp}
 total_mem${TAB}${total_mem}
 EOF
+
+insert_stmt=$(cat << EOF
+INSERT INTO 
+  host_info (
+    id, 
+    hostname, 
+    cpu_number, 
+    cpu_architecture, 
+    cpu_model, 
+    cpu_mhz, 
+    l2_cache, 
+    "timestamp", 
+    total_mem
+  )
+VALUES (
+  DEFAULT,
+  '$hostname',
+  $cpu_number,
+  '$cpu_architecture',
+  '$cpu_model',
+  $cpu_mhz,
+  $l2_cache,
+  '$timestamp',
+  $total_mem
+);
+EOF
+)
+
+export PGPASSWORD=$psql_password
+
+psql -h $psql_host -p $psql_port -d $db_name -U $psql_user -c "$insert_stmt"
+
+exit $?
