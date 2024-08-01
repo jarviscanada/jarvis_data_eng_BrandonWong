@@ -37,7 +37,10 @@ crontab -e
 
 ## Implementation
 ### Architecture
-An example of the architecture can consist 3 Linux hosts who run a Postgres container. Each host writes to the shared volume which is managed using docker.
+An example of the architecture can consist a cluster of three Linux hosts where one node runs the database and the two other nodes communicate with the database. All nodes (including the one running the database) have access to a bash agent to append their machine information to the node that runs the database including the node. Furthermore, they communicate with each other using a switch. You may refer to the figure below.
+
+![Linux Architecture](./assets/linux-sql-architecture.png)
+
 ### Scripts
 - `psql_docker.sh`: Manage the Postgres container on Linux host
 - `host_info.sh`: Add Linux host information to the database
