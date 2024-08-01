@@ -42,8 +42,24 @@ crontab -e
 The database has two tables where we keep track of each host machine and each new log is associated with such machine.
 ### `host_info`
 - `id`: Unique ID of host machine
+- `hostname`: Unique name of the machine
+- `cpu_number`: Number of CPU cores
+- `cpu_architecture`: Type of CPU architecture, e.g., aarch64, x86_64
+- `cpu_model`: Model of the CPU
+- `cpu_mhz`: Refresh Rate of a single CPU core
+- `l2_cache`: Size of the L2 cache
+- `timestamp`: Date snapshot when the information was read
+- `total_mem`: Total size of memory
+**NOTE: `id` is the primary key and both `id` and `hostname` must be unique**
 ### `host_usage`
-
+- `timestamp`: Date snapshot when the information was read
+- `host_id`: Unique ID of host machine that relates to `id` under the `host_info` table
+- `memory_free`: Available unused memory
+- `cpu_idle`: Percentage of the CPU in idle
+- `cpu_kernel`: Percentage of the CPU doing a system task
+- `disk_io`: Number of tasks being read/write
+- `disk_available`: Total size of available storage
+**NOTE: `host_id` is the foreign key that refers to the `host_info` table**
 
 ## Test
 Manual testing was used to test the bash scripts DDL following Base, Alternative and Error cases. Here are the following cases for each script.
