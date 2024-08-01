@@ -1,0 +1,103 @@
+# Preferred name
+name: "Brandon Wong"
+# GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_BrandonWong
+
+# Personal introduction
+summary: "I am an aspiring software engineer who enjoys piecing blocks together: be it ideas from disciplines, people from different teams, or applications from different industries. I have a strong technical skills and an academic background in engineering, full-stack development and web design.
+
+My passion lies in solving business problems to communicate complex ideas to non-technical stakeholders. In Ensemble Technologies Inc., I collaborated with a team of six to transform a client’s mobile car inspection application to reduce the client service time by 20%.
+
+In my undergraduate studies, I've taken on various leadership roles leading teams of 3+ developers to build 5+ full-stack applications that satisfies a clients' needs. I was able to adjust to different team dynamics, translate from requirements to manageable tasks and meet to tight timeframes.
+ 
+I graduated in April 2024 and I'm interested in full-time software developer roles. Please feel free to get in touch with me via email at brandon-wh-wong@outlook.com."
+
+skills:
+  proficient:
+    - Java
+    - "Spring Boot/Gradle/Maven"
+    - Docker
+    - Git
+    - Agile/Scrum
+  competent:
+    - JavaScript/TypeScript
+    - Angular/React/Vue
+    - NodeJS/ExpressJS
+    - C/C#/C++
+    - Python 
+  familiar:
+    - NVidia CUDA
+    - "Python Data/Pandas/Scikitlearn"
+    - Jenkins/Kubernetes
+    - AWS/Azure/GCP
+    - "Java Concurrent Library"
+
+jarvis_projects:
+  - name: "Linux Cluster Resource Monitoring Project"
+    git_url: "/linux_sql"
+    description: "This project is an automated system that keeps track of the resources utilized by a Linux Cluster. It tracks the cpu, memory and disk usage of the given machine and persists all this information within a dedicated database. It is written for system admins or developers who manage actual/virtual Linux machines."
+
+highlighted_projects:
+  - name: "Mini-C Compiler from Scratch"
+    git_url: "Upon Request"
+    description: "Built a Java compiler to transform a subset of the C language into machine code, achieving an 80% test pass rate. Designed a Lexer, Parser and Semantic Analyzer to transform a valid program to an Intermediate Representation. Developed a Code Generator and Register Allocator to convert the IR of a program to MIPS assembly code. Formulated and implemented detailed JUnit tests for the compiler, achieving 72% code coverage and reducing maintenance costs by 20% through early bug detection."
+  - name: "Customer Relation Management Systems"
+    git_url: "Upon Request"
+    description: "Created a CRM system to track and manage 20+ potential prospects and existing clients with consultancy services. Designed the client-side platform to allow users to manage prospects and to customize the client acquisition workflow. Collaborated with a team of four to implement the server-side infrastructure to manage data persistence and task automation defined by users."
+  - name: "Gomoku MCTS AI Agent using Parallel Schemes"
+    git_url: "Upon Request"
+    description: "Designed and compared the performance of the Monte Carlo Tree Search algorithm utilizing Root and Leaf parallelization schemes on the game of Gomoku."
+
+professional_experience:
+  - title: "Software Developer Trainee" 
+    company: "Jarvis Consulting" 
+    duration: "2024-present"
+    description: "Develop web application hosted on remote machines to track linux cluster information"
+  - title: "Co-Founder" 
+    company: "Ensemble Technologies Inc."
+    duration: "2022-2024"
+    description: "Transformed and refactored a client’s mobile car inspection application to view and perform on-sight inspection that extended a contract from 6 to 18 weeks. Hired, coached and led development team of three in UI/UX, full-stack development and software testing practices."
+  - title: "Frontend Web Developer" 
+    company: "Radish Cooperative"
+    duration: "2021-2022"
+    description: "Implemented robust sales enablement tools, facilitating access to sales data across 15+ restaurants and streamlining product management processes across five ordering platforms. Enhanced the online-ordering platform by updating the Angular code base with RxJS and Bootstrap, resulting in a 30% improvement in system performance and reducing order processing time by 25%."
+  - title: "Android Developer" 
+    company: "McGill University [Dr. Benjamin Fung]"
+    duration: "2020"
+    description: "Built an embedded android application that controls the TEMI robot to guide guest around the School of Information at McGill University."
+  - title: "Research Assistant" 
+    company: "McGill University [Dr. Benjamin Fung]"
+    duration: "2019"
+    description: "Transformed clinical raw data from the MIMIC-III database into an edgelist data structure using Python data analytical libraries."
+
+education:
+  - school_name: "McGill University"
+    duration: "2022-2024"
+    degree: "Bachelor of Software Engineering"
+    department: "Faculty of Engineering"
+    awards_achievements:
+      - "Graduated with Internship Program"
+  - school_name: "Marianopolis College"
+    duration: "2018-2020"
+    degree: "Pure and Applied Sciences"
+    department: "DEC Sciences"
+    awards_achievements:
+      - "Dean's List [2018]"
+      - "Dean's List [2019]"
+
+others:
+  - title: "Certificates"
+    bullets:
+      - "TechAccel Program Certificate issued by McGill Engine Centre [2023]"
+      - "Certified Empowered Startupper issued by Empowered Startups [2023]"
+  - title: "Awards"
+    bullets:
+      - "1st Place at iPitch issued by JHKBA (Junior Hong Kong Business Association) [2023]"
+      - "1st Place at McHacks 9th issued by HackMcGill [2022]"
+  - title: "Hobbies"
+    bullets:
+      - "Violinist"
+      - "Saxophonist"
+      - "Gundam Modelling"
+      - "Audiophile"
+      - "Coffee Enthusiast"
