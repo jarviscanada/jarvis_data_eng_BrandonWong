@@ -43,6 +43,7 @@ An example of the architecture can consist 3 Linux hosts who run a Postgres cont
 - `host_info.sh`: Add Linux host information to the database
 - `host_usage.sh`: Add Linux host resource usage to the database
 - `crontab`: Schedule a snapshot of the Linux host resource usage every minute
+- `verify_num_arg.sh`: Helper script to verify number of arguments from user inputs
 ### Database Modeling
 The database has two tables where we keep track of each host machine and each new log is associated with such machine.
 ### `host_info`
