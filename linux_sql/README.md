@@ -37,7 +37,12 @@ crontab -e
 
 ## Implementation
 ### Architecture
+An example of the architecture can consist 3 Linux hosts who run a Postgres container. Each host writes to the shared volume which is managed using docker.
 ### Scripts
+- `psql_docker.sh`: Manage the Postgres container on Linux host
+- `host_info.sh`: Add Linux host information to the database
+- `host_usage.sh`: Add Linux host resource usage to the database
+- `crontab`: Schedule a snapshot of the Linux host resource usage every minute
 ### Database Modeling
 The database has two tables where we keep track of each host machine and each new log is associated with such machine.
 ### `host_info`
