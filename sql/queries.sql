@@ -15,3 +15,10 @@ VALUES
   ((SELECT max(facid) FROM cd.facilities)+ 1,
   'Spa', 20, 30, 100000, 800);
 
+-- Question 3: Update a value on a specific row
+UPDATE 
+  cd.facilities 
+SET 
+  initialoutlay = 10000 
+WHERE 
+  name = 'Tennis Court 2';

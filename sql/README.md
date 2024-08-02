@@ -21,3 +21,14 @@ VALUES
   ((SELECT max(facid) FROM cd.facilities)+ 1,
     'Spa', 20, 30, 100000, 800);
 ```
+
+## Question 3: Update a value of a specific row
+Update a value of a specific row on table `cd.facilities`. Ensure that we can select the specific row either with the primary key or value that is unique.
+```
+UPDATE 
+  cd.facilities 
+SET 
+  initialoutlay = 10000 
+WHERE 
+  name = 'Tennis Court 2';
+```
