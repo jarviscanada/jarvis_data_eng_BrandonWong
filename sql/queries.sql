@@ -40,6 +40,8 @@ FROM
       facid = 0
   ) as facs2
 WHERE
-  name = 'Tennis Court 2'
+  name = 'Tennis Court 2';
 
-
+-- Question 5: Delete an entire table
+DELETE FROM
+  cd.bookings;
