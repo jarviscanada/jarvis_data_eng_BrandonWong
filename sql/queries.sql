@@ -64,4 +64,10 @@ WHERE
 AND
   facs.membercost < facs.monthlymaintenance / 50;
 
-
+-- Question 8: Select with string condition
+SELECT
+  *
+FROM
+  cd.facilities
+WHERE
+  name LIKE '%Tennis%';
