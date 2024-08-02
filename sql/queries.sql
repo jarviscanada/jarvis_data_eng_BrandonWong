@@ -71,3 +71,13 @@ FROM
   cd.facilities
 WHERE
   name LIKE '%Tennis%';
+
+-- Question 9: Select with range
+SELECT
+  *
+FROM
+  cd.facilities
+WHERE
+  facid IN (1,5);
+
+
