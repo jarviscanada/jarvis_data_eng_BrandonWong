@@ -22,3 +22,24 @@ SET
   initialoutlay = 10000 
 WHERE 
   name = 'Tennis Court 2';
+
+-- Question 4: Update a row based on other row(s)
+UPDATE
+  cd.facilities facs
+SET
+  membercost = facs2.membercost * 1.1,
+  guestcost = facs2.guestcost * 1.1,
+FROM
+  (
+    SELECT
+      membercost,
+      guestcost
+    FROM
+      cd.facilities
+    WHERE
+      facid = 0
+  ) as facs2
+WHERE
+  name = 'Tennis Court 2'
+
+
