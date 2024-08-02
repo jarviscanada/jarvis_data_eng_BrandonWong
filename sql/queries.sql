@@ -90,3 +90,16 @@ FROM
   cd.members
 WHERE
   joindate >= '2012-09-01';
+
+-- Question 11: Select two tables using union
+SELECT
+  surname
+FROM
+  cd.members
+UNION
+SELECT
+  name as surname
+FROM
+  cd.facilities;
+
+

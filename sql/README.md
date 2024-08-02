@@ -135,3 +135,16 @@ WHERE
   joindate >= '2012-09-01';
 ```
 
+### Question 11: Select two tables using union
+Select two rows and place it to a single column. You can use UNION that can have two selections and place them together. Unlike JOIN, it doesnt not require the rows between two tables to match with an identifier.
+```sql
+SELECT
+  surname
+FROM
+  cd.members
+UNION
+SELECT
+  name as surname
+FROM
+  cd.facilities;
+```
