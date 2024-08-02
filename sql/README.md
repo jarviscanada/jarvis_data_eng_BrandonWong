@@ -63,3 +63,12 @@ Delete an entire table using the table's name
 DELETE FROM
   cd.bookings;
 ```
+
+## Question 6: Delete a row
+Delete a row that does not have any foreign keys. In this example, the member does not have any bookings so we can safely remove the row on the table without worrying that the primary key exists as a foreign key on other tables
+```
+DELETE FROM
+  cd.members
+WHERE
+  memid = 37;
+```

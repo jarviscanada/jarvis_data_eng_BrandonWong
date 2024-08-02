@@ -45,3 +45,9 @@ WHERE
 -- Question 5: Delete an entire table
 DELETE FROM
   cd.bookings;
+
+-- Question 6: Delete a row
+DELETE FROM
+  cd.members
+WHERE
+  memid = 37;
