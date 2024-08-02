@@ -182,3 +182,18 @@ WHERE
 ORDER BY
   start;
 ```
+
+### Question 14: Left outer join
+Join a table that has reference to itself; however, we display the row whether we have a match or not. If we choose the first table to fetch the information then we can assign it to the left side. Thus, using LEFT OUTER JOIN ensures that any left rows will be displayed whether the right side has a match or not. If it doesn't, a null value will be placed.
+```sql
+SELECT
+  mbs.firstname as memfname,
+  mbs.surname as memsname,
+  mbs2.firstname as recfname,
+  mbs2.surname as recsname
+FROM
+  cd.members as mbs
+  LEFT OUTER JOIN cd.members mbs2 ON mbs.recommendedby = mbs2.memid
+ORDER BY
+  memsname, memfname;
+```

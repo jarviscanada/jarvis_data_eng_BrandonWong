@@ -132,3 +132,15 @@ WHERE
   AND '2012-09-22 00:00:00'
 ORDER BY
   start;
+
+-- Question 14: Left outer join
+SELECT
+  mbs.firstname as memfname,
+  mbs.surname as memsname,
+  mbs2.firstname as recfname,
+  mbs2.surname as recsname
+FROM
+  cd.members as mbs
+  LEFT OUTER JOIN cd.members mbs2 ON mbs.recommendedby = mbs2.memid
+ORDER BY
+  memsname, memfname;
