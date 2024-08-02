@@ -9,3 +9,15 @@ INSERT INTO cd.facilities
 VALUES 
   (9, 'Spa', 20, 30, 100000, 800);
 ```
+
+## Question 2: Insert a row with auto-increment ID
+Insert a row to table `cd.facilities` with auto-increment ID. This can be achieved by performing a subquery that fetches the highest ID value from the `cd.facilities` table.
+```
+INSERT INTO cd.facilities (
+  facid, name, membercost, guestcost, 
+  initialoutlay, monthlymaintenance
+) 
+VALUES 
+  ((SELECT max(facid) FROM cd.facilities)+ 1,
+    'Spa', 20, 30, 100000, 800);
+```
