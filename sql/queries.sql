@@ -1,6 +1,7 @@
 -- Introduction
 -- All SQL module queries will be placed under this file as reference
 
+-- MODIFYING DATA MODULE
 -- Question 1: Insert a row
 INSERT INTO cd.facilities 
 VALUES 
@@ -51,3 +52,16 @@ DELETE FROM
   cd.members
 WHERE
   memid = 37;
+
+-- BASICS MODULE
+-- Question 7: Select with conditions
+SELECT
+  facid, name, membercost, monthlymaintenance
+FROM
+  cd.facilities as facs
+WHERE
+  facs.membercost > 0
+AND
+  facs.membercost < facs.monthlymaintenance / 50;
+
+
