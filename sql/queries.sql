@@ -102,4 +102,21 @@ SELECT
 FROM
   cd.facilities;
 
+-- Join Module
+-- Question 12: Simple join
+SELECT
+  bks.starttime
+FROM
+  cd.bookings bks
+JOIN
+  cd.members mbs
+ON
+  bks.memid = mbs.memid
+WHERE
+  CONCAT(
+    mbs.firstname,
+    ' ',
+    mbs.surname
+  ) = 'David Farrell';
 
+-- Question 13: 

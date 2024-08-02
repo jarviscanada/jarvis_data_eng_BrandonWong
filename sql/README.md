@@ -148,3 +148,23 @@ SELECT
 FROM
   cd.facilities;
 ```
+
+## Join Module
+### Question 12: Simple join
+Join bookings and members so that we can fetch a list of bookings based on a specific name. If we have access to their ID, then we dont have to use JOIN; however, we are only provided with a name. Thus, a join operation must be made to complete it. Furthermore, if you want to compare a multiple strings to a string, use CONCAT to ensure it becomes one entire string for comparison
+```sql
+SELECT
+  bks.starttime
+FROM
+  cd.bookings bks
+JOIN
+  cd.members mbs
+ON
+  bks.memid = mbs.memid
+WHERE
+  CONCAT(
+    mbs.firstname,
+    ' ',
+    mbs.surname
+  ) = 'David Farrell';
+```
