@@ -211,3 +211,22 @@ ORDER BY
   surname,
   firstname;
 ```
+
+### Question 16: Join without using join
+Join tables without the keyword JOIN can be achieved using a subquery. Inside the subquery, we can match the left table with the right table.
+```sql
+SELECT
+  DISTINCT CONCAT(mbs.firstname, ' ', mbs.surname) as member,
+  (
+    SELECT
+      CONCAT(mbs2.firstname, ' ', mbs2.surname) as recommender
+    FROM
+      cd.members as mbs2
+    WHERE
+      mbs2.memid = mbs.recommendedby
+  )
+FROM
+  cd.members as mbs
+ORDER BY
+  members;
+```

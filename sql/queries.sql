@@ -155,3 +155,19 @@ FROM
 ORDER BY
   surname,
   firstname;
+
+-- Question 16: Join without using join
+SELECT
+  DISTINCT CONCAT(mbs.firstname, ' ', mbs.surname) as member,
+  (
+    SELECT
+      CONCAT(mbs2.firstname, ' ', mbs2.surname) as recommnder
+    FROM
+      cd.members as mbs2
+    WHERE
+      mbs2.memid = mbs.recommendedby
+  )
+FROM
+  cd.members as mbs
+ORDER BY
+  members;
