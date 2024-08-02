@@ -119,4 +119,16 @@ WHERE
     mbs.surname
   ) = 'David Farrell';
 
--- Question 13: 
+-- Question 13: Join between ordered dates
+SELECT
+  bks.starttime as start,
+  facs.name
+FROM
+  cd.bookings bks
+  JOIN cd.facilities facs ON bks.facid = facs.facid
+WHERE
+  facs.name LIKe 'Tennis%'
+  AND bks.starttime BETWEEN '2012-09-21 00:00:00'
+  AND '2012-09-22 00:00:00'
+ORDER BY
+  start;

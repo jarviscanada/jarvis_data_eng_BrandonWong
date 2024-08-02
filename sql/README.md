@@ -157,14 +157,28 @@ SELECT
   bks.starttime
 FROM
   cd.bookings bks
-JOIN
-  cd.members mbs
-ON
-  bks.memid = mbs.memid
+  JOIN cd.members mbs ON bks.memid = mbs.memid
 WHERE
   CONCAT(
     mbs.firstname,
     ' ',
     mbs.surname
   ) = 'David Farrell';
+```
+
+### Question 13: Join between ordered dates
+Join bookings on certain facilities by ordered date. To order dates, use ORDER BY and since we are looking for a range, you can compare two dates or use the BETWEEN keyword. We cannot compare a given date to a specific date using the equal operator.
+```sql
+SELECT
+  bks.starttime as start,
+  facs.name
+FROM
+  cd.bookings bks
+  JOIN cd.facilities facs ON bks.facid = facs.facid
+WHERE
+  facs.name LIKE 'Tennis%'
+  AND bks.starttime BETWEEN '2012-09-21 00:00:00'
+  AND '2012-09-22 00:00:00'
+ORDER BY
+  start;
 ```
