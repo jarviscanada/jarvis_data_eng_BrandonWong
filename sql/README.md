@@ -16,12 +16,21 @@ VALUES
 Insert a row to table `cd.facilities` with auto-increment ID. This can be achieved by performing a subquery that fetches the highest ID value from the `cd.facilities` table.
 ```sql
 INSERT INTO cd.facilities (
-  facid, name, membercost, guestcost, 
-  initialoutlay, monthlymaintenance
+  facid,
+  name, 
+  membercost, 
+  guestcost, 
+  initialoutlay, 
+  monthlymaintenance
 ) 
 VALUES 
   ((SELECT max(facid) FROM cd.facilities)+ 1,
-    'Spa', 20, 30, 100000, 800);
+    'Spa',
+    20, 
+    30, 
+    100000, 
+    800
+  );
 ```
 
 ### Question 3: Update a value of a specific row
@@ -78,7 +87,10 @@ WHERE
 Select rows that satisfy conditions. You can use aliases to refer to each row with a readable name and use values to compare each row.
 ```sql
 SELECT
-  facid, name, membercost, monthlymaintenance
+  facid, 
+  name, 
+  membercost, 
+  monthlymaintenance
 FROM
   cd.facilities as facs
 WHERE
@@ -108,3 +120,18 @@ FROM
 WHERE
   facid IN (1,5);
 ```
+
+### Question 10: Select with date
+Select rows that is before a certain date. You can use number comparison to compare dates, and date formats can be wrapped with single quotes using YYYY-MM-DD HH:MM:SS
+```sql
+SELECT
+  memid,
+  surname,
+  firstname,
+  joindate
+FROM
+  cd.members
+WHERE
+  joindate >= '2012-09-01';
+```
+

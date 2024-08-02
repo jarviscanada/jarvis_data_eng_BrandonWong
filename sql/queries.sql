@@ -80,4 +80,13 @@ FROM
 WHERE
   facid IN (1,5);
 
-
+-- Question 10: Select with date
+SELECT
+  memid,
+  surname,
+  firstname,
+  joindate
+FROM
+  cd.members
+WHERE
+  joindate >= '2012-09-01';
