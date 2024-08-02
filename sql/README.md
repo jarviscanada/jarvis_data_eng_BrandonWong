@@ -197,3 +197,17 @@ FROM
 ORDER BY
   memsname, memfname;
 ```
+
+### Question 15: Inner distinct join
+Join a table who have recommended another member. In the schema, we have the ID of which member recommended them. So we have to reverse the process by using an inner join. To remove any duplicates, we can use DISTINCT
+```sql
+SELECT
+  DISTINCT(mbs2.firstname) as firstname,
+  mbs2.surname as surname
+FROM
+  cd.members as mbs
+  JOIN cd.members as mbs2 ON mbs2.memid = mbs.recommendedby
+ORDER BY
+  surname,
+  firstname;
+```

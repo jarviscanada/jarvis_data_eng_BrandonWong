@@ -144,3 +144,14 @@ FROM
   LEFT OUTER JOIN cd.members mbs2 ON mbs.recommendedby = mbs2.memid
 ORDER BY
   memsname, memfname;
+
+-- Question 15: Inner distinct join
+SELECT
+  DISTINCT(mbs2.firstname) as firstname,
+  mbs2.surname as surname
+FROM
+  cd.members as mbs
+  JOIN cd.members as mbs2 ON mbs2.memid = mbs.recommendedby
+ORDER BY
+  surname,
+  firstname;
