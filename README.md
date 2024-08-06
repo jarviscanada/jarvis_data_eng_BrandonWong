@@ -20,6 +20,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 **Linux Cluster Resource Monitoring Project** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/linux_sql)]: This project is an automated system that keeps track of the resources utilized by a Linux Cluster. It tracks the cpu, memory and disk usage of the given machine and persists all this information within a dedicated database. It is written for system admins or developers who manage actual/virtual Linux machines.
 
+**RDBMS and SQL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/sql)]: This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.
+
 
 ## Highlighted Projects
 **Mini-C Compiler from Scratch** [[GitHub](Upon Request)]: Built a Java compiler to transform a subset of the C language into machine code, achieving an 80% test pass rate. Designed a Lexer, Parser and Semantic Analyzer to transform a valid program to an Intermediate Representation. Developed a Code Generator and Register Allocator to convert the IR of a program to MIPS assembly code. Formulated and implemented detailed JUnit tests for the compiler, achieving 72% code coverage and reducing maintenance costs by 20% through early bug detection.
