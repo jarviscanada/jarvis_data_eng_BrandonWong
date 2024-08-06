@@ -387,3 +387,15 @@ SELECT
 FROM
   cd.members;
 ```
+
+### Question 27: Regex string
+You can use the tilda to apply a regex on VARCHAR values.
+```sql
+SELECT
+  memid,
+  telephone
+FROM
+  cd.members
+WHERE
+  telephone ~ '[()]';
+```

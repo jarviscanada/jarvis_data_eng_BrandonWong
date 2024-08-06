@@ -298,3 +298,12 @@ SELECT
   CONCAT(surname, ', ', firstname)
 FROM
   cd.members;
+
+-- Question 27: Regex string
+SELECT
+  memid,
+  telephone
+FROM
+  cd.members
+WHERE
+  telephone ~ '[()]';
