@@ -235,3 +235,18 @@ SELECT
 FROM
   cd.bookings;
 
+-- Question 22: Join aggregation
+SELECT
+  mbs.surname,
+  mbs.firstname,
+  mbs.memid,
+  MIN(bks.starttime)
+FROM
+  cd.members as mbs
+  JOIN cd.bookings bks ON mbs.memid = bks.memid
+WHERE
+  bks.starttime > '2012-09-01'
+GROUP BY
+  mbs.memid
+ORDER BY
+  mbs.memid;
