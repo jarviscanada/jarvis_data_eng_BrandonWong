@@ -1,7 +1,15 @@
 # Introduction
+This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.
 
 # SQL Queries
 ## Table Setup (DDL)
+The database is set up with three tables mimicking a sport center management system where members or guests can create bookings for different sport centers.
+
+- `members` refer to users who are either a member or guest can also refer other members.
+- `facilities` refer to buildings that users can create bookings to.
+- `bookings` refer to a reservation made by a member for a facility.
+
+In other words, `members` have a primary key `memid` and two foreign keys associated with `members` for recommendedby users. `bookings` have two foreign keys `memid` for members and `facid` for facilities. 
 
 ## Modifying data module
 ### Question 1: Insert a row
