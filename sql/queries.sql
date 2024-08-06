@@ -210,3 +210,19 @@ GROUP BY
   facid
 ORDER BY
   SUM(slots);
+
+-- Question 20: Extract date aggregation
+SELECT
+  facid,
+  EXTRACT(MONTH FROM starttime) as month,
+  SUM(slots)
+FROM
+  cd.bookings
+WHERE
+  EXTRACT(YEAR FROM starttime) = '2012'
+GROUP BY
+  facid,
+  month
+ORDER BY
+  facid,
+  month;

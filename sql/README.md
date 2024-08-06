@@ -278,3 +278,22 @@ GROUP BY
 ORDER BY
   SUM(slots);
 ```
+
+### Question 20: Extract date aggregation
+Sum all values based on a specific date. To extract a date/month/year, you can use keyword EXTRACT(<prefix> FROM <field>) to extract it.
+```sql
+SELECT
+  facid,
+  EXTRACT(MONTH FROM starttime) as month,
+  SUM(slots)
+FROM
+  cd.bookings
+WHERE
+  EXTRACT(YEAR FROM starttime) = '2012'
+GROUP BY
+  facid,
+  month
+ORDER BY
+  facid,
+  month;
+```
