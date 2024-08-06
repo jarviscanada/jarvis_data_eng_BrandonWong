@@ -399,3 +399,15 @@ FROM
 WHERE
   telephone ~ '[()]';
 ```
+
+### Question 28: Substring
+You can use the keyword SUBSTRING to get a substring of a VARCHAR value.
+```sql
+SELECT
+  SUBSTRING(surname, 1, 1) as letter,
+  COUNT(*) as count
+FROM
+  cd.members
+GROUP BY letter
+ORDER BY letter;
+```
