@@ -171,3 +171,17 @@ FROM
   cd.members as mbs
 ORDER BY
   members;
+
+-- Aggregation Module
+-- Question 17: Count aggregation
+SELECT
+  recommendedby,
+  COUNT(recommendedby)
+FROM
+  cd.members
+WHERE
+  recommendedby IS NOT NULL
+GROUP BY
+  recommendedby
+ORDER BY
+  recommendedby;

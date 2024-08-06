@@ -230,3 +230,20 @@ FROM
 ORDER BY
   members;
 ```
+
+## Aggregation Module
+### Question 17: Count aggregation
+Count number of recurring value on a field. Ensure that we group the recurring value together using GROUP BY.
+```sql
+SELECT
+  recommendedby,
+  COUNT(recommendedby)
+FROM
+  cd.members
+WHERE
+  recommendedby IS NOT NULL
+GROUP BY
+  recommendedby
+ORDER BY
+  recommendedby;
+```
