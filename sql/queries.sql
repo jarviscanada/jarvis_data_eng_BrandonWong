@@ -196,3 +196,17 @@ GROUP BY
   facid
 ORDER BY
   facid;
+
+-- Question 19: Filter sum aggregation
+SELECT
+  facid,
+  SUM(slots) as "Total Slots"
+FROM
+  cd.bookings
+WHERE
+  starttime BETWEEN '2012-09-01'
+  AND '2012-10-01'
+GROUP BY
+  facid
+ORDER BY
+  SUM(slots);
