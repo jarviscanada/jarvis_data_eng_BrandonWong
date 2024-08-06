@@ -226,3 +226,12 @@ GROUP BY
 ORDER BY
   facid,
   month;
+
+-- Question 21: Subquery aggregation
+SELECT
+  COUNT(
+    DISTINCT(memid)
+  )
+FROM
+  cd.bookings;
+

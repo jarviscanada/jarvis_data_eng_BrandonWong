@@ -297,3 +297,14 @@ ORDER BY
   facid,
   month;
 ```
+
+### Question 21: Subquery aggregation
+Select unique rows for a field. You can use the COUNT keyword on a subquery. In this scenario, we can find the unique rows using DISTINCT.
+```sql
+SELECT
+  COUNT(
+    DISTINCT(memid)
+  )
+FROM
+  cd.bookings;
+```
