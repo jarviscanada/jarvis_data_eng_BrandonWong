@@ -377,3 +377,13 @@ FROM
 WHERE
   rank = 1;
 ```
+
+## String Module
+### Question 26: Concat string
+To concatenate a string, use the CONCAT keyword.
+```sql
+SELECT
+  CONCAT(surname, ', ', firstname)
+FROM
+  cd.members;
+```

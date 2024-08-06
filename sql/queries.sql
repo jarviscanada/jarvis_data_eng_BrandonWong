@@ -291,3 +291,10 @@ FROM
   result
 WHERE
   rank = 1;
+
+-- String Module
+-- Question 26: Concat string
+SELECT
+  CONCAT(surname, ', ', firstname)
+FROM
+  cd.members;
