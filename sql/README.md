@@ -327,3 +327,16 @@ GROUP BY
 ORDER BY
   mbs.memid;
 ```
+
+### Question 23: Window function
+To perform a window function, we can use the OVER keyword that will operate on a set of specified rows. In this scenario, we want to select all rows so we can keep it empty.
+```sql
+SELECT
+  COUNT(*) OVER() as count,
+  firstname,
+  surname
+FROM
+  cd.members
+ORDER BY
+  joindate;
+```

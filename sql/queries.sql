@@ -250,3 +250,13 @@ GROUP BY
   mbs.memid
 ORDER BY
   mbs.memid;
+
+-- Question 23: Window function
+SELECT
+  COUNT(*) OVER() as count,
+  firstname,
+  surname
+FROM
+  cd.members
+ORDER BY
+  joindate;
