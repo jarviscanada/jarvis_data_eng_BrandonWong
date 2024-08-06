@@ -270,3 +270,24 @@ FROM
   cd.members
 ORDER BY
   joindate;
+
+-- Question 25: Subquery window function
+WITH result AS (
+  SELECT
+    facid,
+    SUM(slots) as total,
+    RANK() OVER (
+      ORDER BY SUM(slots) DESC
+    ) as rank
+  FROM
+    cd.bookings
+  GROUP BY
+    facid
+)
+SELECT
+  facid,
+  total
+FROM
+  result
+WHERE
+  rank = 1;

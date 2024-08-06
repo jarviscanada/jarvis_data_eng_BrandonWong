@@ -353,3 +353,27 @@ FROM
 ORDER BY
   joindate;
 ```
+
+### Question 25: Subquery window function
+To perform a subquery on a window function, you can use a temporary view or write the subquery under SELECT. To select the maximum value, you can use MAX if the ddl allows it. Another way is to use the window function RANK. We can create a RANK window function order by the sum of the values in descending order.
+```sql
+WITH result AS (
+  SELECT
+    facid,
+    SUM(slots) as total,
+    RANK() OVER (
+      ORDER BY sum(slots) DESC
+    ) as rank
+  FROM
+    cd.bookings
+  GROUP BY
+    facid
+)
+SELECT
+  facid,
+  total
+FROM
+  result
+WHERE
+  rank = 1;
+```
