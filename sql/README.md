@@ -247,3 +247,17 @@ GROUP BY
 ORDER BY
   recommendedby;
 ```
+
+### Question 18: Sum aggregation
+Sum all values of a certain field. Ensure once again that we group the target of the recurring field together.
+```sql
+SELECT
+  facid,
+  SUM(slots)
+FROM
+  cd.bookings
+GROUP BY
+  facid
+ORDER BY
+  facid;
+```

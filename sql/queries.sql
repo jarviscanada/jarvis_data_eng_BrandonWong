@@ -185,3 +185,14 @@ GROUP BY
   recommendedby
 ORDER BY
   recommendedby;
+
+-- Question 18: Sum aggregation
+SELECT
+  facid,
+  SUM(slots)
+FROM
+  cd.bookings
+GROUP BY
+  facid
+ORDER BY
+  facid;
