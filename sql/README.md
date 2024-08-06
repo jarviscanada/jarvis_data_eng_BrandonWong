@@ -340,3 +340,16 @@ FROM
 ORDER BY
   joindate;
 ```
+
+### Question 24: Row number window function
+To perform a mono increasing list, we can use the ROW\_NUMBER. We do not use PARTITION BY since we want to apply ROW\_NUMBER on the entire set. Furthermore, we want to filter in incremental order of joindate so we can use ORDER BY.
+```sql
+SELECT
+  ROW_NUMBER() OVER(ORDER BY joindate),
+  firstname,
+  surname
+FROM
+  cd.members
+ORDER BY
+  joindate;
+```

@@ -260,3 +260,13 @@ FROM
   cd.members
 ORDER BY
   joindate;
+
+-- Question 24: Row number window function
+SELECT
+  ROW_NUMBER() OVER(ORDER BY joindate),
+  firstname,
+  surname
+FROM
+  cd.members
+ORDER BY
+  joindate;
