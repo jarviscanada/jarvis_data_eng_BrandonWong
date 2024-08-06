@@ -36,6 +36,9 @@ jarvis_projects:
   - name: "Linux Cluster Resource Monitoring Project"
     git_url: "/linux_sql"
     description: "This project is an automated system that keeps track of the resources utilized by a Linux Cluster. It tracks the cpu, memory and disk usage of the given machine and persists all this information within a dedicated database. It is written for system admins or developers who manage actual/virtual Linux machines."
+  - name: "RDBMS and SQL"
+    git_url: "/sql"
+    description: "This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting."
 
 highlighted_projects:
   - name: "Mini-C Compiler from Scratch"

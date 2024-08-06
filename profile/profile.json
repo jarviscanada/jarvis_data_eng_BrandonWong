@@ -43,6 +43,11 @@
       "description": "This project is an automated system that keeps track of the resources utilized by a Linux Cluster. It tracks the cpu, memory and disk usage of the given machine and persists all this information within a dedicated database. It is written for system admins or developers who manage actual/virtual Linux machines.",
       "git_url": "/linux_sql",
       "name": "Linux Cluster Resource Monitoring Project"
+    },
+    {
+      "description": "This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.",
+      "git_url": "/sql",
+      "name": "RDBMS and SQL"
     }
   ],
   "name": "Brandon Wong",
