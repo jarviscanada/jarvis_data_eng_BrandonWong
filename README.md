@@ -3,7 +3,7 @@
 I am an aspiring software engineer who enjoys piecing blocks together: be it ideas from disciplines, people from different teams, or applications from different industries. I have a strong technical skills and an academic background in engineering, full-stack development and web design.
 My passion lies in solving business problems to communicate complex ideas to non-technical stakeholders. In Ensemble Technologies Inc., I collaborated with a team of six to transform a client’s mobile car inspection application to reduce the client service time by 20%.
 In my undergraduate studies, I've taken on various leadership roles leading teams of 3+ developers to build 5+ full-stack applications that satisfies a clients' needs. I was able to adjust to different team dynamics, translate from requirements to manageable tasks and meet to tight timeframes.
-I graduated in April 2024 and I'm interested in full-time software developer roles. Please feel free to get in touch with me via email at brandon-wh-wong@outlook.com.
+I graduated in April 2024 at McGill University in Software Engineering and I'm interested in full-time software developer roles. Please feel free to get in touch with me via email at brandon-wh-wong@outlook.com.
 
 ## Skills
 
@@ -24,11 +24,11 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 
 ## Highlighted Projects
-**Mini-C Compiler from Scratch** [[GitHub](Upon Request)]: Built a Java compiler to transform a subset of the C language into machine code, achieving an 80% test pass rate. Designed a Lexer, Parser and Semantic Analyzer to transform a valid program to an Intermediate Representation. Developed a Code Generator and Register Allocator to convert the IR of a program to MIPS assembly code. Formulated and implemented detailed JUnit tests for the compiler, achieving 72% code coverage and reducing maintenance costs by 20% through early bug detection.
+**Mini-C Compiler from Scratch**: This project is a Java compiler to transform a subset of the C language into machine code, achieving an 80% test pass rate. The project consists of a Lexer, Parser and Semantic Analyzer to transform a valid program to an Intermediate Representation. Furthermore, I developed a Code Generator and Register Allocator to convert the IR of a program to MIPS assembly code. Lastly, I wrapped the compiler with JUnit tests for the compiler, achieving 72% code coverage and reducing maintenance costs by 20% through early bug detection.
 
-**Customer Relation Management Systems** [[GitHub](Upon Request)]: Created a CRM system to track and manage 20+ potential prospects and existing clients with consultancy services. Designed the client-side platform to allow users to manage prospects and to customize the client acquisition workflow. Collaborated with a team of four to implement the server-side infrastructure to manage data persistence and task automation defined by users.
+**Customer Relation Management Systems**: This project is a CRM system to track and manage 20+ potential prospects and existing clients with consultancy services. I designed the client-side platform to allow users to manage prospects and to customize the client acquisition workflow. Also, I collaborated with a team of four to implement the server-side infrastructure to manage data persistence and task automation defined by users.
 
-**Gomoku MCTS AI Agent using Parallel Schemes** [[GitHub](Upon Request)]: Designed and compared the performance of the Monte Carlo Tree Search algorithm utilizing Root and Leaf parallelization schemes on the game of Gomoku.
+**Gomoku MCTS AI Agent using Parallel Schemes**: This project is designed to compare the performance of the Monte Carlo Tree Search algorithm utilizing Root and Leaf parallelization schemes on the game of Gomoku. I organized build scripts to validate the algorithm's performance on Windows CUDA machines.
 
 
 ## Professional Experiences
@@ -37,7 +37,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 **Co-Founder, Ensemble Technologies Inc. (2022-2024)**: Transformed and refactored a client’s mobile car inspection application to view and perform on-sight inspection that extended a contract from 6 to 18 weeks. Hired, coached and led development team of three in UI/UX, full-stack development and software testing practices.
 
-**Frontend Web Developer, Radish Cooperative (2021-2022)**: Implemented robust sales enablement tools, facilitating access to sales data across 15+ restaurants and streamlining product management processes across five ordering platforms. Enhanced the online-ordering platform by updating the Angular code base with RxJS and Bootstrap, resulting in a 30% improvement in system performance and reducing order processing time by 25%.
+**Frontend Web Developer, Radish Cooperative (2021-2022)**: Implemented robust sales enablement tools, facilitating access to sales data across 15+ restaurants and streamlining product management processes across five ordering platforms. I also enhanced the online-ordering platform by updating the Angular code base with RxJS and Bootstrap, resulting in a 30% improvement in system performance and reducing order processing time by 25%.
 
 **Android Developer, McGill University [Dr. Benjamin Fung] (2020)**: Built an embedded android application that controls the TEMI robot to guide guest around the School of Information at McGill University.
 
@@ -54,12 +54,12 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 
 ## Miscellaneous
-- TechAccel Program Certificate issued by McGill Engine Centre [2023]
-- Certified Empowered Startupper issued by Empowered Startups [2023]
-- 1st Place at iPitch issued by JHKBA (Junior Hong Kong Business Association) [2023]
-- 1st Place at McHacks 9th issued by HackMcGill [2022]
-- Violinist
-- Saxophonist
-- Gundam Modelling
-- Audiophile
-- Coffee Enthusiast
+- Certificate: TechAccel Program Certificate issued by McGill Engine Centre [2023]
+- Certificate: Certified Empowered Startupper issued by Empowered Startups [2023]
+- Award: 1st Place at iPitch issued by JHKBA (Junior Hong Kong Business Association) [2023]
+- Award: 1st Place at McHacks 9th issued by HackMcGill [2022]
+- Violinist: Toured at the Summa Cum Laude festival in Vienna and 4 other cities as a concert master of the Montreal Suzuki String Orchestra. I also competed in soloist competitions in Victoriaville, Quebec representing my high school music program.
+- Saxophonist: Played at the Montreal Jazz Festival as an alto saxophonist for 3 years consecutive.
+- Gundam Models: Build plastic models from the Gundam Franchise. I prefer Gundams from the Universal Century.
+- Audiophile: Enjoy a balanced audio feedback while listening to jazz. I currently use the Beyerdynamics DT990 Pro, 250 Ohms.
+- Coffee Enthusiast: Fall in the rabbit hole of the Aeropress. I dabble with medium roast coffee accompanied by a hint of nuts.
