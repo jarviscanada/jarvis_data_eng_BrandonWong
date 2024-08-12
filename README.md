@@ -35,7 +35,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 **Software Developer Trainee, Jarvis Consulting (2024-present)**: Develop web application hosted on remote machines to track linux cluster information
 
-**Co-Founder, Ensemble Technologies Inc. (2022-2024)**: Transformed and refactored a client’s mobile car inspection application to view and perform on-sight inspection that extended a contract from 6 to 18 weeks. Hired, coached and led development team of three in UI/UX, full-stack development and software testing practices.
+**Co-Founder, Ensemble Technologies Inc. (2022-2024)**: Transformed and refactored a client’s mobile car inspection application to view and perform on-sight inspection that extended a contract from 6 to 18 weeks. I also hired, coached and led development team of three in UI/UX, full-stack development and software testing practices.
 
 **Frontend Web Developer, Radish Cooperative (2021-2022)**: Implemented robust sales enablement tools, facilitating access to sales data across 15+ restaurants and streamlining product management processes across five ordering platforms. I also enhanced the online-ordering platform by updating the Angular code base with RxJS and Bootstrap, resulting in a 30% improvement in system performance and reducing order processing time by 25%.
 
