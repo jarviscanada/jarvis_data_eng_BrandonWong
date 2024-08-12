@@ -59,7 +59,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 - Award: 1st Place at iPitch issued by JHKBA (Junior Hong Kong Business Association) [2023]
 - Award: 1st Place at McHacks 9th issued by HackMcGill [2022]
 - Violinist: Toured at the Summa Cum Laude festival in Vienna and 4 other cities as a concert master of the Montreal Suzuki String Orchestra. I also competed in soloist competitions in Victoriaville, Quebec representing my high school music program.
-- Saxophonist: Played at the Montreal Jazz Festival as an alto saxophonist for 3 years consecutive.
+- Saxophonist: Played at the Montreal Jazz Festival as an alto saxophonist for 3 consecutive years.
 - Gundam Models: Build 1/100 and 1/144 plastic models from the Gundam Franchise. I prefer Gundams from the Universal Century (RX-78, Z Gundam, GP-03, Nu Gundam, E Gundam).
 - Audiophile: Enjoy a balanced audio feedback with a crispy voice and a grounded bassline. I currently use the Beyerdynamics DT990 Pro, 250 Ohms.
 - Coffee Enthusiast: Experiment with the Aeropress Coffee Maker. I dabble with medium roast coffee accompanied by a hint of nuts.
