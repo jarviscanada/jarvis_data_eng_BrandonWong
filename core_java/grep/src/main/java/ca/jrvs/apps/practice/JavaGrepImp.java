@@ -62,7 +62,7 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public String getOutFile() {
-        return this.outFile;
+        return this.outFile ;
     }
 
     @Override
