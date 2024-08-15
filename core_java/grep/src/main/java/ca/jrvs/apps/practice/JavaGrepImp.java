@@ -42,31 +42,31 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public String getRootPath() {
-        return "";
+        return this.rootPath;
     }
 
     @Override
     public void setRootPath(String rootPath) {
-
+        this.rootPath = rootPath;
     }
 
     @Override
     public String getRegex() {
-        return "";
+        return this.regex;
     }
 
     @Override
     public void setRegex(String regex) {
-
+        this.regex = regex;
     }
 
     @Override
     public String getOutFile() {
-        return "";
+        return this.outFile;
     }
 
     @Override
     public void setOutFile(String outFile) {
-
+        this.outFile = outFile;
     }
 }
