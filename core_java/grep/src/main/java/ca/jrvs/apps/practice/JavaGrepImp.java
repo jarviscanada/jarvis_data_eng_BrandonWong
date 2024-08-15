@@ -1,43 +1,98 @@
 package ca.jrvs.apps.practice;
 
-import java.io.File;
-import java.io.IOException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class JavaGrepImp implements JavaGrep {
+
+    static final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
 
     private String regex;
     private String rootPath;
     private String outFile;
 
     public static void main(String[] args) {
+        if (args.length != 3) {
+            throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
+        }
 
+        JavaGrepImp javaGrepImp = new JavaGrepImp();
+        javaGrepImp.setRegex(args[0]);
+        javaGrepImp.setRootPath(args[1]);
+        javaGrepImp.setOutFile(args[2]);
+
+        try {
+            javaGrepImp.process();
+        } catch (Exception ex) {
+            logger.error("Error: Unable to process", ex);
+        }
     }
 
     @Override
     public void process() throws IOException {
-
+        List<String> matchedLines = new ArrayList<>();
+        for (File file : listFiles(this.rootPath)) {
+            for (String line : readLines(file)) {
+                if (containsPattern(line)) {
+                    matchedLines.add(line);
+                }
+            }
+        }
+        writeToFile(matchedLines);
     }
 
     @Override
     public List<File> listFiles(String rootDir) {
-        return new ArrayList<File>();
+        File directory = new File(rootDir);
+        File[] files = directory.listFiles();
+        if (files == null) return new ArrayList<>();
+        return Arrays.asList(files);
     }
 
     @Override
     public List<String> readLines(File inputFile) throws IllegalArgumentException {
-        return new ArrayList<String>();
+        BufferedReader reader;
+        List<String> lines = new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader(inputFile));
+            String line = reader.readLine();
+            while (line != null) {
+                lines.add(line);
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+
+        return lines;
     }
 
     @Override
     public boolean containsPattern(String line) {
-        return false;
+        return Pattern.matches(this.regex, line);
     }
 
     @Override
     public void writeToFile(List<String> lines) throws IOException {
+        BufferedWriter writer;
 
+        try {
+            writer = new BufferedWriter(new FileWriter(this.outFile));
+            for (String line : lines) {
+                writer.write(line);
+                writer.newLine();
+            }
+            writer.close();
+        } catch (IOException ioException) {
+            throw new IOException();
+        }
     }
 
     @Override
