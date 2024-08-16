@@ -29,8 +29,10 @@ public class JavaGrepImp implements JavaGrep {
 
         try {
             javaGrepImp.process();
-        } catch (Exception ex) {
-            logger.error("Error: Unable to process", ex);
+        } catch (IOException ioException) {
+            logger.error("ERROR: IO Exception {}", ioException.getMessage());
+        } catch (IllegalArgumentException illegalArgumentException) {
+            logger.error("ERROR: Illegal Argument Exception {}", illegalArgumentException.getMessage());
         }
     }
 
@@ -56,7 +58,7 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     @Override
-    public List<String> readLines(File inputFile) throws IllegalArgumentException {
+    public List<String> readLines(File inputFile) throws IllegalArgumentException  {
         BufferedReader reader;
         List<String> lines = new ArrayList<>();
         try {
@@ -67,8 +69,8 @@ public class JavaGrepImp implements JavaGrep {
                 line = reader.readLine();
             }
             reader.close();
-        } catch (Exception e) {
-            logger.error(e.getMessage());
+        } catch (IOException ioException) {
+            logger.error("ERROR: ReadLine method {}", ioException.getMessage());
         }
 
         return lines;
