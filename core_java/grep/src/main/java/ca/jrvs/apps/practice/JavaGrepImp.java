@@ -37,7 +37,7 @@ public class JavaGrepImp implements JavaGrep {
     @Override
     public void process() throws IOException {
         List<String> matchedLines = new ArrayList<>();
-        for (File file : listFiles(this.rootPath)) {
+        for (File file : listFiles(getRootPath())) {
             for (String line : readLines(file)) {
                 if (containsPattern(line)) {
                     matchedLines.add(line);
@@ -76,7 +76,7 @@ public class JavaGrepImp implements JavaGrep {
 
     @Override
     public boolean containsPattern(String line) {
-        return Pattern.matches(this.regex, line);
+        return Pattern.matches(getRegex(), line);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class JavaGrepImp implements JavaGrep {
         BufferedWriter writer;
 
         try {
-            writer = new BufferedWriter(new FileWriter(this.outFile));
+            writer = new BufferedWriter(new FileWriter(getOutFile()));
             for (String line : lines) {
                 writer.write(line);
                 writer.newLine();

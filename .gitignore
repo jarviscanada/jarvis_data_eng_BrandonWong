@@ -8,3 +8,4 @@ target/
 .idea/
 .eclipse
 **/.DS_Store
+out/
