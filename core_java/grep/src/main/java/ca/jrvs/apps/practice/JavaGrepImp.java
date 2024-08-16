@@ -58,7 +58,8 @@ public class JavaGrepImp implements JavaGrep {
     }
 
     @Override
-    public List<String> readLines(File inputFile) throws IllegalArgumentException  {
+    public List<String> readLines(File inputFile) throws IllegalArgumentException {
+        if (inputFile == null) throw new IllegalArgumentException("ERROR: inputFile is null.");
         BufferedReader reader;
         List<String> lines = new ArrayList<>();
         try {
