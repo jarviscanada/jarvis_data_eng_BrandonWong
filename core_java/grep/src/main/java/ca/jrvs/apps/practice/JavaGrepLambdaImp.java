@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 public class JavaGrepLambdaImp implements JavaGrep {
 
-    static final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
+    static final Logger logger = LoggerFactory.getLogger(JavaGrepLambdaImp.class);
 
     private String regex;
     private String rootPath;
