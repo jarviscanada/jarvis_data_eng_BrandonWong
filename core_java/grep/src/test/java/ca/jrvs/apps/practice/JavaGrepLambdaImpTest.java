@@ -14,16 +14,16 @@ import java.util.Objects;
 
 import static org.junit.Assert.*;
 
-public class JavaGrepImpTest {
+public class JavaGrepLambdaImpTest {
 
-    static final Logger logger = LoggerFactory.getLogger(JavaGrepImpTest.class);
+    static final Logger logger = LoggerFactory.getLogger(JavaGrepLambdaImpTest.class);
     private final String resourcePath = "src/test/resources/data/";
 
-    JavaGrepImp javaGrepImp;
+    JavaGrepLambdaImp javaGrepImp;
 
     @Before
     public void setup() {
-        javaGrepImp = new JavaGrepImp();
+        javaGrepImp = new JavaGrepLambdaImp();
     }
 
     @After
