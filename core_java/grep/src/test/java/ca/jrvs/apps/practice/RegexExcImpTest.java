@@ -7,7 +7,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class RegexExcImpTest {
-    RegexExcImp regexExcImp;
+    private RegexExcImp regexExcImp;
 
     @Before
     public void setup() {
