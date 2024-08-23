@@ -39,6 +39,9 @@ jarvis_projects:
   - name: "RDBMS and SQL"
     git_url: "/sql"
     description: "This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting."
+  - name: "Java Grep Application"
+    git_url: "/core_java/grep"
+	description: "This project is a Java application that allows users to pattern match a given file. It parses an entire file line-by-line and it returns the result to an output file. It is written for developers who have a directory with a large number of files to be parsed with a text pattern."
 
 highlighted_projects:
   - name: "Mini-C Compiler from Scratch"
