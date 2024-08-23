@@ -78,13 +78,6 @@ public class JavaGrepImpTest {
     }
 
     @Test
-    public void readLinesFromNonExistingFile() {
-        File file = new File(resourcePath + "txt/test.txt");
-        List<String> lines = javaGrepImp.readLines(file);
-        // TODO Find a way to write the implementation to be testable
-    }
-
-    @Test
     public void readLinesFromNullFile() {
         try {
             javaGrepImp.readLines(null);
@@ -138,8 +131,7 @@ public class JavaGrepImpTest {
         javaGrepImp.setOutFile(outFile);
         try {
             javaGrepImp.writeToFile(lines);
-        } catch (IOException ioException) {
-
+        } catch (IOException ignored) {
         }
     }
 }
