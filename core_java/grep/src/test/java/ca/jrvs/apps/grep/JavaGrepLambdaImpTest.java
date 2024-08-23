@@ -1,4 +1,4 @@
-package ca.jrvs.apps.practice;
+package ca.jrvs.apps.grep;
 
 import org.junit.After;
 import org.junit.Before;
@@ -14,16 +14,16 @@ import java.util.Objects;
 
 import static org.junit.Assert.*;
 
-public class JavaGrepImpTest {
+public class JavaGrepLambdaImpTest {
 
-    static final Logger logger = LoggerFactory.getLogger(JavaGrepImpTest.class);
+    static final Logger logger = LoggerFactory.getLogger(JavaGrepLambdaImpTest.class);
     private final String resourcePath = "src/test/resources/data/";
 
-    JavaGrepImp javaGrepImp;
+    JavaGrepLambdaImp javaGrepImp;
 
     @Before
     public void setup() {
-        javaGrepImp = new JavaGrepImp();
+        javaGrepImp = new JavaGrepLambdaImp();
     }
 
     @After
@@ -75,6 +75,13 @@ public class JavaGrepImpTest {
         File file = new File(resourcePath + "txt/empty_file.txt");
         List<String> lines = javaGrepImp.readLines(file);
         assertEquals(0, lines.size());
+    }
+
+    @Test
+    public void readLinesFromNonExistingFile() {
+        File file = new File(resourcePath + "txt/test.txt");
+        List<String> lines = javaGrepImp.readLines(file);
+        // TODO Find a way to write the implementation to be testable
     }
 
     @Test
@@ -131,7 +138,8 @@ public class JavaGrepImpTest {
         javaGrepImp.setOutFile(outFile);
         try {
             javaGrepImp.writeToFile(lines);
-        } catch (IOException ignored) {
+        } catch (IOException ioException) {
+
         }
     }
 }
