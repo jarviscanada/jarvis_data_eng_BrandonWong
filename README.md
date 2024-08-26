@@ -35,7 +35,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 ## Professional Experiences
 
-**Software Developer Trainee, Jarvis Consulting (2024-present)**: Develop web application hosted on remote machines to track linux cluster information
+**Software Developer Trainee, Jarvis Consulting (2024-present)**: Train to become a lifelong learner and developer through Jarvis Consulting Group's Java developer training. I am piecing the building blocks to implement web applications using the Java ecosystem using Java 1.8, Maven and Spring Boot. Furthermore, I collaborate with other trainees to develop my communication and leadership and to help others to understand development concepts such as Networking, Containerization and Command Line tools.
 
 **Co-Founder, Ensemble Technologies Inc. (2022-2024)**: Transformed and refactored a client’s mobile car inspection application to view and perform on-sight inspection that extended a contract from 6 to 18 weeks. I also hired, coached and led development team of three in UI/UX, full-stack development and software testing practices.
 
