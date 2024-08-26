@@ -47,6 +47,8 @@ for file in listFilesRecursively(rootDir)
         matchedLines.add(line)
 writeToFile(matchedLines)
 ```
+
+**Note: the project consists of `grep` and `practice` where `grep` consists of the actual implementation and `practice` is the exercises for Regex and Stream/Lambda.**
 ## Performance Issue
 The implementation requires all files to be loaded before checking line by line. This design can exceed the allocated memory in the garbage collector and stop the program. Furthermore, the program parses through each file one-by-one. The linear approach affects the time complexity to be related to the number of total lines of all files combined.
 
@@ -55,6 +57,7 @@ The first issue can be resolved by extending the memory usage for the JVM on com
 The second issue can be resolved using `java.util.Stream` which allows parallelized aggregate operations that can distribute the pattern matching to multiple threads. This implementation will allow the program to parse through several files at the same time.
 
 # Test
+Unit testing using **JUnit 4** to test each method in isolation. The unit testing layer was implemented under `src/test/` where all data sources are stored under `resources` and where all the actual test cases are written under `java/ca/jrvs/apps`. Each test case is written to test a single method in isolation or after all its dependencies have been tested.
 
 # Deployment
 The application is packaged using **Maven** and containerized using **Docker**. We compile the entire program and it's related Apache libraries as a `.jar` file using **Maven** and we containerized using **Docker** to allow the user to run the application without any prior dependencies or installations.
