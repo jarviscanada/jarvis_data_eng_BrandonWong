@@ -57,5 +57,6 @@ The second issue can be resolved using `java.util.Stream` which allows paralleli
 # Test
 
 # Deployment
+The application is packaged using **Maven** and containerized using **Docker**. We compile the entire program and it's related Apache libraries as a `.jar` file using **Maven** and we containerized using **Docker** to allow the user to run the application without any prior dependencies or installations.
 
 # Improvement
