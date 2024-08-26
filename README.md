@@ -22,7 +22,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 **RDBMS and SQL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/sql)]: This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.
 
-**Java Grep Application** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/core_java/grep)]: This project is a Java application that allows users to fetch matching lines given a regex pattern. It takes in a directory and parses through each file line-by-line and returns each matched line to an output file. It mimics the functionality of grep written by GNU, and the java implementation allows developers to run this program on any machine through the JVM.
+**Java Grep Application** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/core_java/grep)]: This project is a Java application that allows users to fetch matching lines given a regex pattern. It takes in a directory and parses through each file line-by-line and returns each matched line to an output file. It mimics the functionality of grep written by GNU, and the Java implementation allows developers to run this program on any machine through the JVM.
 
 
 ## Highlighted Projects
