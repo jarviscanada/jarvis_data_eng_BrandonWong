@@ -38,8 +38,21 @@ ${docker_user}/grep <pattern> <input-directory> <output-file-path>
 
 # Implementation
 ## Pseudocode
-
+The program takes in as input: the `pattern`, `rootDir` and `outputFilePath` and returns a file in `outputFilePath` with each matched line in files under `rootDir` that satisfies `pattern`. It is able to achieve this functionality through a nested loop of all lines of each file under `rootDir`.
+```
+matchedLines = []
+for file in listFilesRecursively(rootDir)
+  for line in readLines(file)
+      if containsPattern(line)
+        matchedLines.add(line)
+writeToFile(matchedLines)
+```
 ## Performance Issue
+The implementation requires all files to be loaded before checking line by line. This design can exceed the allocated memory in the garbage collector and stop the program. Furthermore, the program parses through each file one-by-one. The linear approach affects the time complexity to be related to the number of total lines of all files combined.
+
+The first issue can be resolved by extending the memory usage for the JVM on compile-time. It can also be resolve by loading one file at a time to reduce the program to fill up the heap before it actually needs the data.
+
+The second issue can be resolved using `java.util.Stream` which allows parallelized aggregate operations that can distribute the pattern matching to multiple threads. This implementation will allow the program to parse through several files at the same time.
 
 # Test
 
