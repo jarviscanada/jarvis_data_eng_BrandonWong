@@ -45,6 +45,11 @@
       "description": "This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.",
       "git_url": "/sql",
       "name": "RDBMS and SQL"
+    },
+    {
+      "description": "This project is a Java application that allows users to fetch matching lines given a regex pattern. It takes in a directory and parses through each file line-by-line and returns each matched line to an output file. It mimics the functionality of grep written by GNU, and the java implementation allows developers to run this program on any machine through the JVM.",
+      "git_url": "/core_java/grep",
+      "name": "Java Grep Application"
     }
   ],
   "name": "Brandon Wong",

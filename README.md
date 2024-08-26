@@ -22,6 +22,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 **RDBMS and SQL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/sql)]: This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.
 
+**Java Grep Application** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/core_java/grep)]: This project is a Java application that allows users to fetch matching lines given a regex pattern. It takes in a directory and parses through each file line-by-line and returns each matched line to an output file. It mimics the functionality of grep written by GNU, and the java implementation allows developers to run this program on any machine through the JVM.
+
 
 ## Highlighted Projects
 **Mini-C Compiler from Scratch**: This project is a Java compiler to transform a subset of the C language into machine code, achieving an 80% test pass rate. The project consists of a Lexer, Parser and Semantic Analyzer to transform a valid program to an Intermediate Representation. Furthermore, I developed a Code Generator and Register Allocator to convert the IR of a program to MIPS assembly code. Lastly, I wrapped the compiler with JUnit tests for the compiler, achieving 72% code coverage and reducing maintenance costs by 20% through early bug detection.
