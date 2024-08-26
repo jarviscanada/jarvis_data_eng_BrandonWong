@@ -60,3 +60,6 @@ The second issue can be resolved using `java.util.Stream` which allows paralleli
 The application is packaged using **Maven** and containerized using **Docker**. We compile the entire program and it's related Apache libraries as a `.jar` file using **Maven** and we containerized using **Docker** to allow the user to run the application without any prior dependencies or installations.
 
 # Improvement
+- Load a single file at a time to process pattern matching. This improvement will allow the heap size to be dedicated to memory usage on the current operation for each file.
+- Add logger output file that tracks the progress of the program.
+- Allow different types of output such that the user can store it based on their use case.
