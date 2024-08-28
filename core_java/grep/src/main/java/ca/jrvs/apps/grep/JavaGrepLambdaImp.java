@@ -21,9 +21,13 @@ public class JavaGrepLambdaImp implements JavaGrep {
   private String rootPath;
   private String outFile;
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException, IllegalArgumentException {
     if (args.length != 3) {
-      throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
+      IllegalArgumentException illegalArgumentException =
+              new IllegalArgumentException("JavaGrep regex rootPath outFile");
+      logError(
+              "IllegalArgumentException", "main", "'provided wrong inputs'", illegalArgumentException);
+      throw illegalArgumentException;
     }
 
     JavaGrepLambdaImp javaGrepLambdaImp = new JavaGrepLambdaImp();
@@ -31,13 +35,12 @@ public class JavaGrepLambdaImp implements JavaGrep {
     javaGrepLambdaImp.setRootPath(args[1]);
     javaGrepLambdaImp.setOutFile(args[2]);
 
-    try {
-      javaGrepLambdaImp.process();
-    } catch (IOException ioException) {
-      logger.error("ERROR: IO Exception {}", ioException.getMessage());
-    } catch (IllegalArgumentException illegalArgumentException) {
-      logger.error("ERROR: Illegal Argument Exception {}", illegalArgumentException.getMessage());
-    }
+    javaGrepLambdaImp.process();
+  }
+
+  public static void logError(
+          String errorName, String methodName, String reason, Exception exception) {
+    logger.error("Type Method Reason: {} {} {}", errorName, methodName, reason, exception);
   }
 
   @Override
@@ -46,16 +49,14 @@ public class JavaGrepLambdaImp implements JavaGrep {
     Stream<File> fileStream = listFiles(getRootPath()).stream();
     fileStream.forEach(
         file -> {
-          Stream<String> lineStream = null;
-          try {
-            lineStream = readLines(file).stream();
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
+          try (Stream<String> lineStream = readLines(file).stream()) {
           lineStream.forEach(
               line -> {
                 if (containsPattern(line)) matchedLines.add(line);
               });
+          } catch (IOException ioException) {
+            logError("IOException", "process", "Stream encountered an error", ioException);
+          }
         });
     writeToFile(matchedLines);
   }
@@ -70,12 +71,22 @@ public class JavaGrepLambdaImp implements JavaGrep {
 
   @Override
   public List<String> readLines(File inputFile) throws IllegalArgumentException, IOException {
-    if (inputFile == null) throw new IllegalArgumentException("ERROR: inputFile is null.");
+    if (inputFile == null) {
+      IllegalArgumentException illegalArgumentException =
+              new IllegalArgumentException("missing an input file");
+      logError(
+              "IllegalArgumentException", "readLines", "'inputFile is null'", illegalArgumentException);
+      throw illegalArgumentException;
+    }
     ArrayList<String> lines = new ArrayList<>();
     try (Stream<String> linesStream = Files.lines(inputFile.toPath())) {
       linesStream.forEach(lines::add);
-    } catch (SecurityException e) {
-      logger.error("helo");
+    } catch (SecurityException securityException) {
+      logError("SecurityException", "readLines", "Stream encountered an error", securityException);
+      throw securityException;
+    } catch (IOException ioException) {
+      logError("IOException", "readLines", "'BufferedReader encountered an error'", ioException);
+      throw ioException;
     }
     return lines;
   }
@@ -89,18 +100,23 @@ public class JavaGrepLambdaImp implements JavaGrep {
   public void writeToFile(List<String> lines) throws IOException {
     Stream<String> linesStream = lines.stream();
     BufferedWriter writer;
-
-    writer = new BufferedWriter(new FileWriter(getOutFile()));
-    linesStream.forEach(
-        line -> {
-          try {
-            writer.write(line);
-            writer.newLine();
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        });
-    writer.close();
+    try {
+      writer = new BufferedWriter(new FileWriter(getOutFile()));
+      linesStream.forEach(
+          line -> {
+            try {
+              writer.write(line);
+              writer.newLine();
+            } catch (IOException exception) {
+              logError("IOException", "writeToFile", "'BufferedWriter encountered an error while writing'", exception);
+              throw new RuntimeException(exception);
+            }
+          });
+      writer.close();
+    } catch (IOException ioException) {
+      logError("IOException", "writeToFile", "'BufferedWriter encountered an error'", ioException);
+      throw ioException;
+    }
   }
 
   @Override

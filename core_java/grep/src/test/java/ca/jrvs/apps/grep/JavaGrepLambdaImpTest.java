@@ -76,7 +76,7 @@ public class JavaGrepLambdaImpTest {
     assertEquals(0, lines.size());
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = IOException.class)
   public void readLinesFromNonExistingFile() throws IOException {
     File file = new File(resourcePath + "txt/test.txt");
     javaGrepImp.readLines(file);
