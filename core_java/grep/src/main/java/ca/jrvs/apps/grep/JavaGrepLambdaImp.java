@@ -24,9 +24,9 @@ public class JavaGrepLambdaImp implements JavaGrep {
   public static void main(String[] args) throws IOException, IllegalArgumentException {
     if (args.length != 3) {
       IllegalArgumentException illegalArgumentException =
-              new IllegalArgumentException("JavaGrep regex rootPath outFile");
+          new IllegalArgumentException("JavaGrep regex rootPath outFile");
       logError(
-              "IllegalArgumentException", "main", "'provided wrong inputs'", illegalArgumentException);
+          "IllegalArgumentException", "main", "'provided wrong inputs'", illegalArgumentException);
       throw illegalArgumentException;
     }
 
@@ -39,7 +39,7 @@ public class JavaGrepLambdaImp implements JavaGrep {
   }
 
   public static void logError(
-          String errorName, String methodName, String reason, Exception exception) {
+      String errorName, String methodName, String reason, Exception exception) {
     logger.error("Type Method Reason: {} {} {}", errorName, methodName, reason, exception);
   }
 
@@ -50,10 +50,10 @@ public class JavaGrepLambdaImp implements JavaGrep {
     fileStream.forEach(
         file -> {
           try (Stream<String> lineStream = readLines(file).stream()) {
-          lineStream.forEach(
-              line -> {
-                if (containsPattern(line)) matchedLines.add(line);
-              });
+            lineStream.forEach(
+                line -> {
+                  if (containsPattern(line)) matchedLines.add(line);
+                });
           } catch (IOException ioException) {
             logError("IOException", "process", "Stream encountered an error", ioException);
           }
@@ -73,9 +73,9 @@ public class JavaGrepLambdaImp implements JavaGrep {
   public List<String> readLines(File inputFile) throws IllegalArgumentException, IOException {
     if (inputFile == null) {
       IllegalArgumentException illegalArgumentException =
-              new IllegalArgumentException("missing an input file");
+          new IllegalArgumentException("missing an input file");
       logError(
-              "IllegalArgumentException", "readLines", "'inputFile is null'", illegalArgumentException);
+          "IllegalArgumentException", "readLines", "'inputFile is null'", illegalArgumentException);
       throw illegalArgumentException;
     }
     ArrayList<String> lines = new ArrayList<>();
@@ -108,7 +108,11 @@ public class JavaGrepLambdaImp implements JavaGrep {
               writer.write(line);
               writer.newLine();
             } catch (IOException exception) {
-              logError("IOException", "writeToFile", "'BufferedWriter encountered an error while writing'", exception);
+              logError(
+                  "IOException",
+                  "writeToFile",
+                  "'BufferedWriter encountered an error while writing'",
+                  exception);
               throw new RuntimeException(exception);
             }
           });
