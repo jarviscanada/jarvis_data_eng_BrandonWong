@@ -76,20 +76,15 @@ public class JavaGrepLambdaImpTest {
     assertEquals(0, lines.size());
   }
 
-  @Test
+  @Test(expected = IllegalArgumentException.class)
   public void readLinesFromNonExistingFile() throws IOException {
     File file = new File(resourcePath + "txt/test.txt");
-    List<String> lines = javaGrepImp.readLines(file);
-    // TODO Find a way to write the implementation to be testable
+    javaGrepImp.readLines(file);
   }
 
-  @Test
+  @Test(expected = IllegalArgumentException.class)
   public void readLinesFromNullFile() throws IOException {
-    try {
-      javaGrepImp.readLines(null);
-    } catch (IllegalArgumentException illegalArgumentException) {
-      assertEquals("ERROR: inputFile is null.", illegalArgumentException.getMessage());
-    }
+    javaGrepImp.readLines(null);
   }
 
   @Test
@@ -130,15 +125,11 @@ public class JavaGrepLambdaImpTest {
     assertTrue(file.exists());
   }
 
-  @Test
-  public void writeToDirectory() throws Exception {
+  @Test(expected = IOException.class)
+  public void writeToDirectory() throws IOException {
     List<String> lines = new ArrayList<>();
     String outFile = resourcePath + "out/";
     javaGrepImp.setOutFile(outFile);
-    try {
-      javaGrepImp.writeToFile(lines);
-    } catch (IOException ioException) {
-
-    }
+    javaGrepImp.writeToFile(lines);
   }
 }
