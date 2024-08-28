@@ -1,18 +1,17 @@
 package ca.jrvs.apps.grep;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JavaGrepImpTest {
 
@@ -32,9 +31,9 @@ public class JavaGrepImpTest {
         for (File file : Objects.requireNonNull(directory.listFiles())) {
             if (file == null) continue;
             if (file.delete()) {
-                logger.info("{} is deleted", file.getName());
+                logger.debug("{} is deleted", file.getName());
             } else {
-                logger.info("{} is not deleted", file.getName());
+                logger.debug("{} is not deleted", file.getName());
             }
         }
     }
@@ -64,26 +63,22 @@ public class JavaGrepImpTest {
     }
 
     @Test
-    public void readLinesFromExistingFile() {
+    public void readLinesFromExistingFile() throws IOException {
         File file = new File(resourcePath + "txt/valid_file.txt");
         List<String> lines = javaGrepImp.readLines(file);
         assertEquals(6, lines.size());
     }
 
     @Test
-    public void readLinesFromEmptyFile() {
+    public void readLinesFromEmptyFile() throws IOException {
         File file = new File(resourcePath + "txt/empty_file.txt");
         List<String> lines = javaGrepImp.readLines(file);
         assertEquals(0, lines.size());
     }
 
-    @Test
-    public void readLinesFromNullFile() {
-        try {
-            javaGrepImp.readLines(null);
-        } catch (IllegalArgumentException illegalArgumentException) {
-            assertEquals("ERROR: inputFile is null.", illegalArgumentException.getMessage());
-        }
+    @Test(expected = IllegalArgumentException.class)
+    public void readLinesFromNullFile() throws IOException {
+        javaGrepImp.readLines(null);
     }
 
     @Test
@@ -124,14 +119,11 @@ public class JavaGrepImpTest {
         assertTrue(file.exists());
     }
 
-    @Test
-    public void writeToDirectory() throws Exception {
+    @Test(expected = IOException.class)
+    public void writeToDirectory() throws IOException {
         List<String> lines = new ArrayList<>();
         String outFile = resourcePath + "out/";
         javaGrepImp.setOutFile(outFile);
-        try {
-            javaGrepImp.writeToFile(lines);
-        } catch (IOException ignored) {
-        }
+        javaGrepImp.writeToFile(lines);
     }
 }
