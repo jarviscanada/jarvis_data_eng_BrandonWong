@@ -90,6 +90,10 @@ public class OrderDTO implements DataTransferObject {
     return productPrice;
   }
 
+  public void setId(long id) {
+    this.orderId = id;
+  }
+
   public void setCreationDate(Date creationDate) {
     this.creationDate = creationDate;
   }
