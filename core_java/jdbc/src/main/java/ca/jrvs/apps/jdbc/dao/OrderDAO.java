@@ -2,7 +2,6 @@ package ca.jrvs.apps.jdbc.dao;
 
 import ca.jrvs.apps.jdbc.dto.OrderDTO;
 import ca.jrvs.apps.jdbc.util.DataAccessObject;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class OrderDAO extends DataAccessObject<OrderDTO> {
   @Override
   public OrderDTO findById(long id) throws SQLException {
     OrderDTO order = new OrderDTO();
-    try (PreparedStatement statement = this.connection.prepareStatement(GET_ONE);) {
+    try (PreparedStatement statement = this.connection.prepareStatement(GET_ONE); ) {
       statement.setLong(1, id);
       ResultSet rs = statement.executeQuery();
       while (rs.next()) {
