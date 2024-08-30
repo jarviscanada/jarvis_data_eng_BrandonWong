@@ -13,7 +13,7 @@ public class Application {
   static Logger logger = LoggerFactory.getLogger(Application.class);
 
   public static void main(String[] args) {
-    DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "company", "postgres", "password");
+    DatabaseConnectionManager dcm = new DatabaseConnectionManager("localhost", "enterprise", "postgres", "password");
     try {
       Connection connection = dcm.getConnection();
       Statement statement = connection.createStatement();
