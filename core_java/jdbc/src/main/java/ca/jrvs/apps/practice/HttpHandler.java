@@ -8,7 +8,7 @@ import java.net.http.HttpResponse;
 
 public class HttpHandler {
     public static void main(String[] args) {
-        String apiKey = "ed3afc8426mshe9cc386c501a3f0p1d9b0fjsn6b287178a61a";
+        String apiKey = "";
         String symbol = "MSFT";
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://azure3.p.rapidapi.com/people/page/1/"))
