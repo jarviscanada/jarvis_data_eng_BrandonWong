@@ -7,111 +7,118 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "symbol",
-        "companyName",
-        "exchange",
-        "description",
-        "CEO",
-        "sector",
-        "financials",
-        "dividends"
+  "symbol",
+  "companyName",
+  "exchange",
+  "description",
+  "CEO",
+  "sector",
+  "financials",
+  "dividends"
 })
 public class Company {
 
-    @JsonProperty("symbol")
-    private String symbol;
-    @JsonProperty("companyName")
-    private String companyName;
-    @JsonProperty("exchange")
-    private String exchange;
-    @JsonProperty("description")
-    private String description;
-    @JsonProperty("CEO")
-    private String ceo;
-    @JsonProperty("sector")
-    private String sector;
-    @JsonProperty("financials")
-    private List<Financial> financials = null;
-    @JsonProperty("dividends")
-    private List<Dividend> dividends = null;
+  @JsonProperty("symbol")
+  private String symbol;
 
-    @JsonProperty("symbol")
-    public String getSymbol() {
-        return symbol;
-    }
+  @JsonProperty("companyName")
+  private String companyName;
 
-    @JsonProperty("symbol")
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
+  @JsonProperty("exchange")
+  private String exchange;
 
-    @JsonProperty("companyName")
-    public String getCompanyName() {
-        return companyName;
-    }
+  @JsonProperty("description")
+  private String description;
 
-    @JsonProperty("companyName")
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
+  @JsonProperty("CEO")
+  private String ceo;
 
-    @JsonProperty("exchange")
-    public String getExchange() {
-        return exchange;
-    }
+  @JsonProperty("sector")
+  private String sector;
 
-    @JsonProperty("exchange")
-    public void setExchange(String exchange) {
-        this.exchange = exchange;
-    }
+  @JsonProperty("financials")
+  private List<Financial> financials = null;
 
-    @JsonProperty("description")
-    public String getDescription() {
-        return description;
-    }
+  @JsonProperty("dividends")
+  private List<Dividend> dividends = null;
 
-    @JsonProperty("description")
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  @JsonProperty("symbol")
+  public String getSymbol() {
+    return symbol;
+  }
 
-    @JsonProperty("CEO")
-    public String getCeo() {
-        return ceo;
-    }
+  @JsonProperty("symbol")
+  public void setSymbol(String symbol) {
+    this.symbol = symbol;
+  }
 
-    @JsonProperty("CEO")
-    public void setCeo(String ceo) {
-        this.ceo = ceo;
-    }
+  @JsonProperty("companyName")
+  public String getCompanyName() {
+    return companyName;
+  }
 
-    @JsonProperty("sector")
-    public String getSector() {
-        return sector;
-    }
+  @JsonProperty("companyName")
+  public void setCompanyName(String companyName) {
+    this.companyName = companyName;
+  }
 
-    @JsonProperty("sector")
-    public void setSector(String sector) {
-        this.sector = sector;
-    }
+  @JsonProperty("exchange")
+  public String getExchange() {
+    return exchange;
+  }
 
-    @JsonProperty("financials")
-    public List<Financial> getFinancials() {
-        return financials;
-    }
+  @JsonProperty("exchange")
+  public void setExchange(String exchange) {
+    this.exchange = exchange;
+  }
 
-    @JsonProperty("financials")
-    public void setFinancials(List<Financial> financials) {
-        this.financials = financials;
-    }
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
 
-    @JsonProperty("dividends")
-    public List<Dividend> getDividends() {
-        return dividends;
-    }
+  @JsonProperty("description")
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    @JsonProperty("dividends")
-    public void setDividends(List<Dividend> dividends) {
-        this.dividends = dividends;
-    }
+  @JsonProperty("CEO")
+  public String getCeo() {
+    return ceo;
+  }
+
+  @JsonProperty("CEO")
+  public void setCeo(String ceo) {
+    this.ceo = ceo;
+  }
+
+  @JsonProperty("sector")
+  public String getSector() {
+    return sector;
+  }
+
+  @JsonProperty("sector")
+  public void setSector(String sector) {
+    this.sector = sector;
+  }
+
+  @JsonProperty("financials")
+  public List<Financial> getFinancials() {
+    return financials;
+  }
+
+  @JsonProperty("financials")
+  public void setFinancials(List<Financial> financials) {
+    this.financials = financials;
+  }
+
+  @JsonProperty("dividends")
+  public List<Dividend> getDividends() {
+    return dividends;
+  }
+
+  @JsonProperty("dividends")
+  public void setDividends(List<Dividend> dividends) {
+    this.dividends = dividends;
+  }
 }
