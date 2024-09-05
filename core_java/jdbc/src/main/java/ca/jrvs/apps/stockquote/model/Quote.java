@@ -1,8 +1,6 @@
 package ca.jrvs.apps.stockquote.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.sql.Date;
 import java.sql.Timestamp;
 
