@@ -5,21 +5,23 @@ import ca.jrvs.apps.stockquote.service.*;
 import java.util.Optional;
 
 public class StockQuoteController {
-  private QuoteService quoteService;
-  private PositionService positionService;
+  private final QuoteService quoteService;
+  private final PositionService positionService;
 
   public StockQuoteController(QuoteService quoteService, PositionService positionService) {
     this.quoteService = quoteService;
     this.positionService = positionService;
   }
 
-  public void initClient() {
-    Optional<Quote> optionalQuote = quoteService.fetchQuoteDataFromAPI("MSFT");
-    if (optionalQuote.isPresent()) {
-      Quote quote = optionalQuote.get();
-      positionService.buy("MSFT", 1, quote.getPrice());
-    } else {
-      System.out.println("Oops");
-    }
+  public Optional<Quote> initClient(String symbol) {
+    return quoteService.fetchQuoteDataFromAPI(symbol);
+  }
+
+  public void buy(String symbol, int numOfShares, double price) {
+    positionService.buy(symbol, numOfShares, price);
+  }
+
+  public void sell(String symbol) {
+    positionService.sell(symbol);
   }
 }

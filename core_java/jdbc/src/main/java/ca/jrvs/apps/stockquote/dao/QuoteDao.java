@@ -15,7 +15,8 @@ public class QuoteDao extends CrudDAO<Quote, String> {
           + "previous_close, change, change_percent, timestamp) "
           + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-  private static final String GET_ONE = "SELECT * FROM quote WHERE symbol=?";
+  private static final String GET_ONE =
+      "SELECT * FROM quote WHERE symbol=? LIMIT 1 ORDER BY timestamp DESC";
 
   private static final String GET_ALL = "SELECT * FROM quote";
 

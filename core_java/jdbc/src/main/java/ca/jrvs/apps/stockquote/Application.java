@@ -3,6 +3,7 @@ package ca.jrvs.apps.stockquote;
 import ca.jrvs.apps.stockquote.controller.StockQuoteController;
 import ca.jrvs.apps.stockquote.dao.PositionDao;
 import ca.jrvs.apps.stockquote.dao.QuoteDao;
+import ca.jrvs.apps.stockquote.model.Quote;
 import ca.jrvs.apps.stockquote.service.PositionService;
 import ca.jrvs.apps.stockquote.service.QuoteService;
 import java.io.BufferedReader;
@@ -12,10 +13,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import okhttp3.OkHttpClient;
 
 public class Application {
   public static void main(String[] args) {
+    if (args.length < 2) {
+      throw new IllegalArgumentException("USAGE: stockApp <symbol> <buy/sell> [<num_of_shares>]");
+    }
+    String symbol = args[0];
+    String action = args[1];
+    int numOfShares = args.length == 3 && args[2] != null ? Integer.parseInt(args[2]) : 1;
     Map<String, String> properties = new HashMap<>();
     try (BufferedReader br =
         new BufferedReader(new FileReader("src/main/resources/properties.txt"))) {
@@ -49,7 +57,15 @@ public class Application {
 
       StockQuoteController stockQuoteController =
           new StockQuoteController(quoteService, positionService);
-      stockQuoteController.initClient();
+      Optional<Quote> quote = stockQuoteController.initClient(symbol);
+      quote.ifPresent(
+          (stock) -> {
+            if (action.equals("buy")) {
+              stockQuoteController.buy(symbol, numOfShares, stock.getPrice());
+            } else {
+              stockQuoteController.sell(symbol);
+            }
+          });
     } catch (SQLException e) {
       e.printStackTrace();
     }

@@ -2,6 +2,8 @@ package ca.jrvs.apps.stockquote.util;
 
 import ca.jrvs.apps.stockquote.model.Quote;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.Instant;
 import okhttp3.*;
 
 public class QuoteHttpHelper {
@@ -25,7 +27,12 @@ public class QuoteHttpHelper {
             .method("GET", RequestBody.create(new byte[0], null))
             .build();
     try (Response response = client.newCall(request).execute()) {
-      return JsonParser.toObjectFromJson(response.body().string(), Quote.class);
+      Quote quote = JsonParser.toObjectFromJson(response.body().string(), Quote.class);
+      if (quote != null) {
+        quote.setTimestamp(Timestamp.from(Instant.now()));
+        return quote;
+      }
+      return null;
     } catch (IOException e) {
       throw new IllegalArgumentException(e);
     }
