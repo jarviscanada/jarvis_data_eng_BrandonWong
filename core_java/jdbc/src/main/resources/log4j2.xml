@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+<Configuration>
     <Properties>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n</Property>
     </Properties>
@@ -7,10 +7,14 @@
         <Console name="console" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
+        <File name="file" fileName="output.log" immediateFlush="false" append="false">\
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </File>
     </Appenders>
     <Loggers>
         <Root level="info">
             <AppenderRef ref="console"/>
+            <AppenderRef ref="file" />
         </Root>
     </Loggers>
 </Configuration>

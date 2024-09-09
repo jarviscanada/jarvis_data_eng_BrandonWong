@@ -39,6 +39,7 @@ public class PositionDao extends CrudDAO<Position, String> {
 
   @Override
   public Optional<Position> findById(String id) throws IllegalArgumentException {
+    if (id == null) throw new IllegalArgumentException("ERROR: Missing ID");
     Position position = new Position();
     try (PreparedStatement statement = this.connection.prepareStatement(GET_ONE); ) {
       statement.setString(1, id);
@@ -75,7 +76,7 @@ public class PositionDao extends CrudDAO<Position, String> {
   }
 
   @Override
-  public void deletebyId(String id) throws IllegalArgumentException {
+  public void deleteById(String id) throws IllegalArgumentException {
     try (PreparedStatement statement = this.connection.prepareStatement(DELETE_ONE); ) {
       statement.setString(1, id);
       statement.execute();

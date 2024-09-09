@@ -52,6 +52,7 @@ public class QuoteDao extends CrudDAO<Quote, String> {
 
   @Override
   public Optional<Quote> findById(String id) throws IllegalArgumentException {
+    if (id == null) throw new IllegalArgumentException("ERROR: Missing ID");
     Quote quote = new Quote();
     try (PreparedStatement statement = this.connection.prepareStatement(GET_ONE); ) {
       statement.setString(1, id);
@@ -84,7 +85,7 @@ public class QuoteDao extends CrudDAO<Quote, String> {
   }
 
   @Override
-  public void deletebyId(String id) throws IllegalArgumentException {
+  public void deleteById(String id) throws IllegalArgumentException {
     try (PreparedStatement statement = this.connection.prepareStatement(DELETE_ONE); ) {
       statement.setString(1, id);
       statement.execute();

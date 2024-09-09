@@ -20,6 +20,6 @@ public class PositionService {
   }
 
   public void sell(String ticker) {
-    dao.deletebyId(ticker);
+    dao.deleteById(ticker);
   }
 }

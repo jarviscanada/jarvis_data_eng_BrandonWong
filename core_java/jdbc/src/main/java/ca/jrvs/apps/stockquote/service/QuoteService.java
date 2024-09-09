@@ -4,15 +4,14 @@ import ca.jrvs.apps.stockquote.dao.QuoteDao;
 import ca.jrvs.apps.stockquote.model.Quote;
 import ca.jrvs.apps.stockquote.util.QuoteHttpHelper;
 import java.util.Optional;
-import okhttp3.OkHttpClient;
 
 public class QuoteService {
   private QuoteDao dao;
   private QuoteHttpHelper httpHelper;
 
-  public QuoteService(QuoteDao dao, String apiKey, OkHttpClient httpClient) {
+  public QuoteService(QuoteDao dao, QuoteHttpHelper quoteHttpHelper) {
     this.dao = dao;
-    httpHelper = new QuoteHttpHelper(apiKey, httpClient);
+    this.httpHelper = quoteHttpHelper;
   }
 
   public Optional<Quote> fetchQuoteDataFromAPI(String ticker) {

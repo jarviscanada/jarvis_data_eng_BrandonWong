@@ -46,7 +46,7 @@ public abstract class CrudDAO<T, ID> {
    * @param id - must not be null
    * @throws IllegalArgumentException - if id is null
    */
-  public abstract void deletebyId(ID id) throws IllegalArgumentException;
+  public abstract void deleteById(ID id) throws IllegalArgumentException;
 
   /** Deletes all entities managed by the repository */
   public abstract void deleteAll();

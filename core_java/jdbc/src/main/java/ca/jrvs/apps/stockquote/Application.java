@@ -6,6 +6,7 @@ import ca.jrvs.apps.stockquote.dao.QuoteDao;
 import ca.jrvs.apps.stockquote.model.Quote;
 import ca.jrvs.apps.stockquote.service.PositionService;
 import ca.jrvs.apps.stockquote.service.QuoteService;
+import ca.jrvs.apps.stockquote.util.QuoteHttpHelper;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -47,10 +48,10 @@ public class Application {
             properties.get("username"),
             properties.get("password"));
     try (Connection connection = dcm.getConnection()) {
-      OkHttpClient client = new OkHttpClient();
-
+      OkHttpClient httpClient = new OkHttpClient();
+      QuoteHttpHelper client = new QuoteHttpHelper(properties.get("apiKey"), httpClient);
       QuoteDao quoteDao = new QuoteDao(connection);
-      QuoteService quoteService = new QuoteService(quoteDao, properties.get("apiKey"), client);
+      QuoteService quoteService = new QuoteService(quoteDao, client);
 
       PositionDao positionDao = new PositionDao(connection);
       PositionService positionService = new PositionService(positionDao);
