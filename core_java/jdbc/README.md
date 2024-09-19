@@ -1,5 +1,5 @@
 # Introduction
-This project is a CRUD Backend application that help users manage their investment on any ticker on the Alpha Vantage stock exchange. It is an exercise to practice the flow of data through a Controller-Service-Repository pattern. The application is written in Java through the Maven build system leveraging JDBC, HTTP and JSON libraries to handle the persistence of each investment transaction and latest ticker value.  
+This project is a CRUD Backend application that helps users manage their investment on any ticker on the Alpha Vantage API. It is an exercise to practice the flow of data through a Controller-Service-Repository pattern. The application is written in Java through the Maven build system leveraging JDBC, HTTP and JSON libraries to handle the persistence of each investment transaction and latest ticker value.  
 ## Technologies
 - **Java:** Implement the stock application using the Controller-Service-Repository pattern. It handles the request to the third-party API: Alpha Vantage.
 - **Maven:** Compile the application and append HTTP, JSON, Apache and testing libraries.
@@ -10,6 +10,7 @@ This project is a CRUD Backend application that help users manage their investme
 - **SLF4J Logging:** Generate application log through the console and as a file using the Log4 library.
 - **Google Format:** Format existing Java code based on the Google Format standard on compile time.
 - **Git:** Keep track of the project progress.
+- **Alpha Vantage:** Fetch all ticker stock price of the current financial market.
 
 # Quick Start
 To start using the application
@@ -42,13 +43,13 @@ ${docker_user}/stockquote <symbol> <buy/sell> [<num_of_shares>]
 
 # Implementation
 ## ER Diagram
-The following diagram is represented through two entities: 1. Quote which represents the list of quotes based on their ticker; 2. Position which represents the action performed by the user on a specific quote. In other words, Quote has the ticker as its primary key and position refers to quote's primary key.
+The following diagram is represented through two entities: 1. Quote which represents the list of quotes based on their ticker; 2. Position which represents the action performed by the user on a specific quote. In other words, quote has the ticker as its primary key and position refers to quote's primary key.
 <p align="center">
   <img alt="Stock Quote ER Diagram" src="./resources/er-diagram-stockquote.png" />
 </p>
 
 ## Design Patterns
-The application is design such that the user (investor) inputs the parameters such as the symbol, number of shares and the action of buying/selling through the Frontend layer, and it communicates with the Backend layer to execute the appropriate command. 
+The design of the application that allows the user (investor) to inputs the parameters such as the symbol, number of shares and the action of buying/selling through the Frontend layer, and it communicates with the Backend layer to execute the appropriate command. 
 
 The heart of the application is in the Backend layer where we use the Controller-Service-Repository pattern. This pattern allows a separation of concern in the following fashion: 1. Controller describes the business logic; 2. Service defines the actionable task; 3. DAO communicates directly to the persistence layer (PostgreSQL).
 <p align="center">
