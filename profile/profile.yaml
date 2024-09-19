@@ -55,9 +55,6 @@ highlighted_projects:
     description: "This project is designed to compare the performance of the Monte Carlo Tree Search algorithm utilizing Root and Leaf parallelization schemes on the game of Gomoku. I organized build scripts to validate the algorithm's performance on Windows CUDA machines."
 
 professional_experience:
-  - title: "Software Developer"
-    company: "Jarvis Consulting Group"
-    duration: "Sep 2024 - present"
   - title: "Software Developer Trainee"
     company: "Jarvis Consulting Group"
     duration: "Aug 2024 - Sep 2024"
