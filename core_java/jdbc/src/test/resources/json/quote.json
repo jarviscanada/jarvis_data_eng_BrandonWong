@@ -1,0 +1,13 @@
+{
+  "symbol": "MSFT",
+  "open": 151.65,
+  "high": 153.42,
+  "low": 0.0,
+  "price": 123.0,
+  "volume": 20,
+  "latest_trading_day": 1725595200000,
+  "previous_close": 6.0,
+  "change": 2.0,
+  "change_percent": "0.2374%",
+  "timestamp": 1725508800000
+}
