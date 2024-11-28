@@ -1,17 +1,14 @@
 # Brandon Wong . Jarvis Consulting
 
-I am an aspiring software engineer who enjoys piecing blocks together: be it ideas from disciplines, people from different teams, or applications from different industries. I have a strong professional and academic background in engineering, full-stack development and web design.
-My passion lies in solving business problems to communicate complex ideas to non-technical stakeholders. In Ensemble Technologies Inc., I collaborated with a team of six to transform a client’s mobile car inspection application to reduce the client service time by 20%.
-In my undergraduate studies, I've taken on various leadership roles leading teams of 3+ developers to build 5+ full-stack applications that satisfies a clients' needs. I was able to adjust to different team dynamics, translate from requirements to manageable tasks and meet to tight timeframes.
-I graduated in April 2024 at McGill University in Software Engineering and I'm kick start a career in software development and data engineering. Please feel free to get in touch with me via email at brandon-wh-wong@outlook.com.
+I am an aspiring software engineer who enjoys piecing blocks together: be it ideas from disciplines, people from different teams, or applications from different industries. I have a strong professional and academic background in engineering, full-stack development and web design. My passion lies in solving business problems to communicate complex ideas to stakeholders. With Jarvis Consulting Group, I enhanced a NBC (National Bank of Canada) development team's processes through the design and implementation of a synthetic data generation tool. In Ensemble Technologies Inc., I collaborated with a team of six to transform a client's mobile car inspection application to reduce the client service time by 20%. Lastly, I've taken on various leadership roles in undergraduate studies leading teams of 3+ developers to build 5+ full-stack applications that satisfies a clients' needs. I am able to adjust to different team dynamics, to translate from requirements to manageable tasks and to meet tight timeframes. I recently graduated in April 2024 at McGill University in Software Engineering and I am ready to kick start a career in data engineering.
 
 ## Skills
 
-**Proficient:** Java, Spring Boot/Gradle/Maven, Docker, Git, Agile/Scrum
+**Proficient:** Scala, Python, Java, Databricks, Apache Spark, Delta Lake, OracleSQL, PostgreSQL, MySQL, DB2, MongoDB, Git, GitHub, GitLab, BitBucket, Agile, Scrum, Jira, Docker, Jenkins, Numpy, Pandas, Scikitlearn, Matplotlib
 
-**Competent:** JavaScript/TypeScript, Angular/React/Vue, NodeJS/ExpressJS, C/C#/C++, Python
+**Competent:** AWS, Azure, GCP, Ubuntu, Fedora, Rocky, Spring Boot, Gradle, Maven, JavaScript, TypeScript, NodeJS, Angular, React, Vue, Svelte
 
-**Familiar:** Nvidia CUDA, Python Data/Pandas/Scikitlearn, Ubuntu/Fedora/Rocky, AWS/Azure/GCP, Java Concurrent Library
+**Familiar:** C, C#, C++, Nvidia CUDA, Java Concurrent Library, Matlab
 
 ## Jarvis Projects
 
@@ -20,7 +17,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 **Linux Cluster Resource Monitoring Project** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/linux_sql)]: This project is an automated system that keeps track of the resources utilized by a Linux Cluster. It tracks the cpu, memory and disk usage of the given machine and persists all this information within a dedicated database. It is written for system admins or developers who manage actual/virtual Linux machines.
 
-**RDBMS and SQL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/sql)]: This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.
+**RDBMS and SQL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/sql)]: This project is documentation on PostgreSQL exercises on the following topics: Basics, Join, Aggregation, Window Functions and String. These exercises ensure that the develop can perform queries on a relational database using practical features and formatting.
 
 **Java Grep Application** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_BrandonWong/tree/master/core_java/grep)]: This project is a Java application that allows users to fetch matching lines given a regex pattern. It takes in a directory and parses through each file line-by-line and returns each matched line to an output file. It mimics the functionality of grep written by GNU, and the Java implementation allows developers to run this program on any machine through the JVM.
 
@@ -37,11 +34,13 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 
 ## Professional Experiences
 
+**Associate (Data Engineer), Technnology Advisory Services, Jarvis Consulting Group (Oct 2024 - Dec 2024)**: Designed a synthetic data generation solution in Oracle to accelerate the client's development efficiency by reducing 50% in testing preparation time. I have also facilitated comprehension of the database schema by providing exhaustive insights into the structure and relationships of the data.
+
 **Software Developer Trainee, Jarvis Consulting Group (Aug 2024 - Sep 2024)**: Train to become a lifelong learner and developer through Jarvis Consulting Group's Java developer training. I am piecing the building blocks to implement web applications using the Java ecosystem using Java 1.8, Maven and Spring Boot. Furthermore, I collaborate with other trainees to develop my communication and leadership and to help others to understand development concepts such as Networking, Containerization and Command Line tools.
 
-**Co-Founder, Ensemble Technologies Inc. (Dec 2022 - Jan 2024)**: Transformed and refactored a client’s mobile car inspection application to view and perform on-sight inspection that extended a contract from 6 to 18 weeks. I also hired, coached and led development team of three in UI/UX, full-stack development and software testing practices.
+**Co-Founder, Ensemble Technologies Inc. (Dec 2022 - Jan 2024)**: Transformed and refactored a client's mobile car inspection application to view and perform on-sight inspection that extended a contract from 6 to 18 weeks. I also hired, coached and led development team of three in UI/UX, full-stack development and software testing practices.
 
-**Frontend Web Developer, Radish Cooperative (Oct 2021 - Sep 2022)**: Implemented robust sales enablement tools, facilitating access to sales data across 15+ restaurants and streamlining product management processes across five ordering platforms. I also enhanced the online-ordering platform by updating the Angular code base with RxJS and Bootstrap, resulting in a 30% improvement in system performance and reducing order processing time by 25%.
+**Software Developer, Radish Cooperative (Oct 2021 - Sep 2022)**: Implemented robust sales enablement tools, facilitating access to sales data across 15+ restaurants and streamlining product management processes across five ordering platforms. I also enhanced the online-ordering platform by updating the Angular code base with RxJS and Bootstrap, resulting in a 30% improvement in system performance and reducing order processing time by 25%.
 
 **Android Developer, McGill University [Dr. Benjamin Fung] (Jun 2020 - Sep 2020)**: Built an embedded android application that controls the TEMI robot to guide guest around the School of Information at McGill University.
 
@@ -66,4 +65,4 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_BrandonWon
 - Saxophonist: Played at the Montreal Jazz Festival as an alto saxophonist for 3 consecutive years.
 - Gundam Models: Build 1/100 and 1/144 plastic models from the Gundam Franchise. I prefer Gundams from the Universal Century (RX-78, Z Gundam, GP-03, Nu Gundam, E Gundam).
 - Audiophile: Enjoy a balanced audio feedback with a crispy voice and a grounded bassline. I currently use the Beyerdynamics DT990 Pro, 250 Ohms.
-- Coffee Enthusiast: Experiment with the Aeropress Coffee Maker. I dabble with medium roast coffee accompanied by a hint of nuts.
+- Coffee Enthusiast: Experiment and annotate each lab test with my V60 pour over. I dabble with light roast coffee accompanied by a hint of berries.
